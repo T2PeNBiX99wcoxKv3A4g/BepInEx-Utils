@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using HarmonyLib;
 
 // ReSharper disable InconsistentNaming
@@ -5,14 +6,19 @@ using HarmonyLib;
 
 namespace BepInExUtils.EX;
 
+[SuppressMessage("ReSharper", "UnusedMember.Global")]
 public class TraverseEX<T>(Traverse<T> traverse)
 {
     private readonly Traverse<T> _traverse = traverse;
 
-    // ReSharper disable UnusedMember.Global
     public void Set(T value) => _traverse.Value = value;
     public T Get() => _traverse.Value;
-    // ReSharper restore UnusedMember.Global
+
+    public T Value
+    {
+        get => _traverse.Value;
+        set => _traverse.Value = value;
+    }
 
     public T V
     {
