@@ -11,9 +11,9 @@ public abstract class ClassProxy
     protected readonly Type Type;
 
     // ReSharper disable once MemberCanBePrivate.Global
-    protected readonly object Instance;
+    protected readonly object? Instance;
 
-    protected ClassProxy(object instance, string className)
+    protected ClassProxy(object? instance, string className)
     {
         Type = AccessTools.TypeByName(className);
         Instance = instance;
@@ -22,6 +22,7 @@ public abstract class ClassProxy
     protected ClassProxy(string className)
     {
         Type = AccessTools.TypeByName(className);
+        if (Type.IsAbstract) return;
         Instance = Activator.CreateInstance(Type) ?? throw new NullReferenceException("Could not create instance");
     }
     
