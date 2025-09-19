@@ -15,12 +15,16 @@ public abstract class ClassProxy
 
     protected ClassProxy(object? instance, string className)
     {
+        if (string.IsNullOrEmpty(className))
+            throw new ArgumentException("Class name cannot be null or empty", className);
         Type = AccessTools.TypeByName(className);
         Instance = instance;
     }
 
     protected ClassProxy(string className)
     {
+        if (string.IsNullOrEmpty(className))
+            throw new ArgumentException("Class name cannot be null or empty", className);
         Type = AccessTools.TypeByName(className);
         if (Type.IsAbstract) return;
         Instance = Activator.CreateInstance(Type) ?? throw new NullReferenceException("Could not create instance");
@@ -28,12 +32,16 @@ public abstract class ClassProxy
     
     protected ClassProxy(string className, params object[] args)
     {
+        if (string.IsNullOrEmpty(className))
+            throw new ArgumentException("Class name cannot be null or empty", className);
         Type = AccessTools.TypeByName(className);
         Instance = typeof(Activator).GetMethod(nameof(Activator.CreateInstance))?.Invoke(Instance, args) ?? throw new NullReferenceException("Could not create instance");
     }
     
     protected ClassProxy(string className, object[] args, object[] activationAttributes)
     {
+        if (string.IsNullOrEmpty(className))
+            throw new ArgumentException("Class name cannot be null or empty", className);
         Type = AccessTools.TypeByName(className);
         Instance = Activator.CreateInstance(Type, args, activationAttributes) ?? throw new NullReferenceException("Could not create instance");
     }
