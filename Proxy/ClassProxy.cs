@@ -5,14 +5,38 @@ using HarmonyLib;
 
 namespace BepInExUtils.Proxy;
 
-public abstract class ClassProxy(object instance, string className = "")
+public abstract class ClassProxy
 {
     // ReSharper disable once MemberCanBePrivate.Global
-    protected readonly Type Type = AccessTools.TypeByName(className);
+    protected readonly Type Type;
 
     // ReSharper disable once MemberCanBePrivate.Global
-    protected readonly object Instance = instance;
+    protected readonly object Instance;
 
+    protected ClassProxy(object instance, string className)
+    {
+        Type = AccessTools.TypeByName(className);
+        Instance = instance;
+    }
+
+    protected ClassProxy(string className)
+    {
+        Type = AccessTools.TypeByName(className);
+        Instance = Activator.CreateInstance(Type) ?? throw new NullReferenceException("Could not create instance");
+    }
+    
+    protected ClassProxy(string className, params object[] args)
+    {
+        Type = AccessTools.TypeByName(className);
+        Instance = typeof(Activator).GetMethod(nameof(Activator.CreateInstance))?.Invoke(Instance, args) ?? throw new NullReferenceException("Could not create instance");
+    }
+    
+    protected ClassProxy(string className, object[] args, object[] activationAttributes)
+    {
+        Type = AccessTools.TypeByName(className);
+        Instance = Activator.CreateInstance(Type, args, activationAttributes) ?? throw new NullReferenceException("Could not create instance");
+    }
+    
     // ReSharper disable once UnusedMember.Global
     protected T? MethodAccess<T>(string methodName, params object?[] parameters)
     {
