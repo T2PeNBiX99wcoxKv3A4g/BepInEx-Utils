@@ -32,7 +32,9 @@ jobs:
           custom_release_rules: "fix:prerelease,feat:prerelease"
 
       - name: Create `CHANGELOG.md` file
-        run: echo ${{ steps.tag_version.outputs.changelog }} > ./CHANGELOG.md
+        run: |
+          $changeLog = @"${{ steps.tag_version.outputs.changelog }}"@
+          echo $changeLog > ./CHANGELOG.md
 
       - name: Set git user
         uses: fregante/setup-git-user@v2
