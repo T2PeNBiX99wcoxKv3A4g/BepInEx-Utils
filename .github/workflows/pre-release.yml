@@ -33,7 +33,9 @@ jobs:
 
       - name: Create `CHANGELOG.md` file
         run: |
-          $changeLog = @"${{ steps.tag_version.outputs.changelog }}"@
+          $changeLog = @"
+          ${{ steps.tag_version.outputs.changelog }}
+          "@
           echo $changeLog > ./CHANGELOG.md
 
       - name: Set git user
