@@ -34,12 +34,28 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pre_release_branches: "fast"
       
+      - name: Clone Python script
+        run: git clone https://github.com/T2PeNBiX99wcoxKv3A4g/Change-Log-File-Generator.git .change-log-generator
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '>=3.13.7'
+          cache: 'pip'
+          cache-dependency-path: "**/.change-log-generator/requirements*.txt"
+
+      - name: Install Dependencies
+        run: pip install -r .change-log-generator/requirements.txt
+      
       - name: Create `CHANGELOG.md` file
         run: |
           $changeLog = @"
           ${{ steps.tag_version.outputs.changelog }}
           "@
-          echo $changeLog > ./CHANGELOG.md
+          python .change-log-generator/change_log_generator.py $changeLog
+
+      - name: Remove `.change-log-generator`
+        run: Remove-Item -Force -Recurse .change-log-generator
 
       - name: Set git user
         uses: fregante/setup-git-user@v2
