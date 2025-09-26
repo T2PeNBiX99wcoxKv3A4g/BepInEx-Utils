@@ -6,5 +6,5 @@ Utils for BepinEx
 
 ## Installation
 1. Download [BepInEx](https://github.com/BepInEx/BepInEx) and [install](https://docs.bepinex.dev/articles/user_guide/installation/index.html).
-2. Put downloaded .dll file to `game folder/BepInEx/plugins`
-3. Launch game
+2. Extract the .dll file to `game folder/BepInEx/plugins`.
+3. Launch game.
