@@ -1,5 +1,15 @@
 # Changelog
 
+### [0.0.11](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.0.10...v0.0.11) (2025-10-04)
+
+### Bug Fixes
+
+* **README:** Upgrade README.md ([78274ff](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/78274ffbf7ffc5aecb3890e37b1fdbbbdf46582f))
+
+* **README:** Upgrade README.md ([ec41794](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/ec417946a258a98110ef85ba7cb1df38d5afb145))
+
+* Clean code ([6c32e82](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/6c32e8217b7fa5aaed90f8be725872f460dda699))
+
 ### [0.0.10](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.0.9...v0.0.10) (2025-09-25)
 
 ### Bug Fixes
