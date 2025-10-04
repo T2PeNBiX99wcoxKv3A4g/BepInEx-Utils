@@ -33,7 +33,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pre_release_branches: "fast"
-      
+
       - name: Clone Python script
         run: git clone https://github.com/T2PeNBiX99wcoxKv3A4g/Change-Log-File-Generator.git .change-log-generator
 
@@ -46,7 +46,7 @@ jobs:
 
       - name: Install Dependencies
         run: pip install -r .change-log-generator/requirements.txt
-      
+
       - name: Create `CHANGELOG.md` file
         run: |
           $changeLog = @"

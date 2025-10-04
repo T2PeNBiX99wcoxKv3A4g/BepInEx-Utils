@@ -54,7 +54,7 @@ jobs:
           ${{ steps.tag_version.outputs.changelog }}
           "@
           python .change-log-generator/change_log_generator.py $changeLog
-          
+
       - name: Remove `.change-log-generator`
         run: Remove-Item -Force -Recurse .change-log-generator
 

@@ -20,18 +20,18 @@ public class ConfigEntryEX<T>(ConfigEntry<T>? configEntry, T defaultValue = defa
 {
     private T _value => configEntry == null ? defaultValue : configEntry.Value;
 
+    public T V
+    {
+        get => _value;
+        set => Set(value);
+    }
+
     // ReSharper disable once UnusedMember.Global
     // ReSharper disable once MemberCanBePrivate.Global
     public void Set(T value)
     {
         if (configEntry == null) return;
         configEntry.Value = value;
-    }
-
-    public T V
-    {
-        get => _value;
-        set => Set(value);
     }
 
     public static implicit operator T(ConfigEntryEX<T> instance) => instance._value;

@@ -11,9 +11,6 @@ public class TraverseEX<T>(Traverse<T> traverse)
 {
     private readonly Traverse<T> _traverse = traverse;
 
-    public void Set(T value) => _traverse.Value = value;
-    public T Get() => _traverse.Value;
-
     public T Value
     {
         get => _traverse.Value;
@@ -25,6 +22,9 @@ public class TraverseEX<T>(Traverse<T> traverse)
         get => _traverse.Value;
         set => _traverse.Value = value;
     }
+
+    public void Set(T value) => _traverse.Value = value;
+    public T Get() => _traverse.Value;
 
     public static implicit operator T(TraverseEX<T> instance) => instance._traverse.Value;
     public static explicit operator TraverseEX<T>(Traverse<T> traverse) => new(traverse);
