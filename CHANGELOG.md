@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.2.1...v0.2.2) (2025-10-05)
+
+### Bug Fixes
+
+* **CHANGELOG:** Change version title to h2 format ([d47b662](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/d47b6623c466254e220fa61d05dfa442f2c37ce7))
+
 ## [0.2.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.2.0...v0.2.1) (2025-10-05)
 
 ### Bug Fixes
