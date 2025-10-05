@@ -1,6 +1,6 @@
 # Changelog
 
-### [0.2.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.2.0...v0.2.1) (2025-10-05)
+## [0.2.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.2.0...v0.2.1) (2025-10-05)
 
 ### Bug Fixes
 
