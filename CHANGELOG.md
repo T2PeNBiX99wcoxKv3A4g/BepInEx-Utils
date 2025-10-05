@@ -12,7 +12,7 @@
 
 * Add attributes for generator ([d6d05e3](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/d6d05e3c76a761fe28be76c96d218ce6c0b14d11))
 
-### [0.0.11](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.0.10...v0.0.11) (2025-10-04)
+## [0.0.11](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.0.10...v0.0.11) (2025-10-04)
 
 ### Bug Fixes
 
@@ -22,13 +22,13 @@
 
 * Clean code ([6c32e82](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/6c32e8217b7fa5aaed90f8be725872f460dda699))
 
-### [0.0.10](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.0.9...v0.0.10) (2025-09-25)
+## [0.0.10](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.0.9...v0.0.10) (2025-09-25)
 
 ### Bug Fixes
 
 * **Workflow:** Upgrade change log generator ([ae4a1f2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/ae4a1f27d6f8066e6fe9d73357a4f02b3d5bfd84))
 
-### [0.0.9](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.0.8...v0.0.9) (2025-09-24)
+## [0.0.9](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.0.8...v0.0.9) (2025-09-24)
 
 ### Bug Fixes
 
