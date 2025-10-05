@@ -4,17 +4,8 @@ using JetBrains.Annotations;
 namespace BepInExUtils.Attributes;
 
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
-public class ConfigBindAttribute<T> : Attribute
+public class ConfigBindAttribute<T> : Attribute where T : IComparable
 {
-    // public ConfigBindAttribute(string key, ConfigDefinition configDefinition, T defaultValue,
-    //     ConfigDescription? configDescription = null)
-    // {
-    //     Key = key;
-    //     ConfigDefinition = configDefinition;
-    //     DefaultValue = defaultValue;
-    //     ConfigDescription = configDescription;
-    // }
-
     public ConfigBindAttribute(string key, string section, T defaultValue, string description)
     {
         Key = key;
@@ -23,13 +14,12 @@ public class ConfigBindAttribute<T> : Attribute
         ConfigDescription = new(description);
     }
 
-    public ConfigBindAttribute(string key, string section, T defaultValue,
-        ConfigDescription? configDescription = null)
+    public ConfigBindAttribute(string key, string section, T defaultValue, string description, T minValue, T maxValue)
     {
         Key = key;
         ConfigDefinition = new(section, key);
         DefaultValue = defaultValue;
-        ConfigDescription = configDescription;
+        ConfigDescription = new(description, new AcceptableValueRange<T>(minValue, maxValue));
     }
 
     [UsedImplicitly] public string Key { get; protected set; }
