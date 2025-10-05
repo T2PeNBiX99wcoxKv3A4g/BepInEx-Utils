@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.1.0...v0.2.0) (2025-10-05)
+
+### Features
+
+* Add BepInUtilsUnityPlugin class and improve ConfigBindAttribute constructor ([ed45206](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/ed45206c76ec7ff43842d01500bbe4edc9d3770f))
+
 ## [0.1.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.0.11...v0.1.0) (2025-10-05)
 
 ### Features
