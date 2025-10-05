@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.0.11...v0.1.0) (2025-10-05)
+
+### Features
+
+* Add attributes for generator ([d6d05e3](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/d6d05e3c76a761fe28be76c96d218ce6c0b14d11))
+
 ### [0.0.11](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.0.10...v0.0.11) (2025-10-04)
 
 ### Bug Fixes
