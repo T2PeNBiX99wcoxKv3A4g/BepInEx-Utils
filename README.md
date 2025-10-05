@@ -11,7 +11,7 @@ Utils for BepinEx
 2. Extract the .dll file to `game folder/BepInEx/plugins`.
 3. Launch game.
 
-## Development
+## For developers
 
 Import the .dll file from the release page like any other library.  
 You can also download https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils.Generator if you want to generate code using
