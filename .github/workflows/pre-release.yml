@@ -71,10 +71,10 @@ jobs:
         run: "git commit -m 'Action: Update `CHANGELOG.md`'"
 
       - name: Fetch from master
-        run: git fetch origin master
+        run: git fetch origin fast
 
       - name: Push code to master
-        run: git push origin master
+        run: git push origin fast
 
       - name: Build Executable
         run: dotnet build --configuration Release
