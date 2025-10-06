@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.2.4](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.2.3..v0.2.4) - 2025-10-06
+
+### 🐛 Bug Fixes
+
+- *(workflows)* Update branch references from `master` to `fast` in pre-release workflow - ([1510fdf](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/1510fdf0ed64112073ad1f9f2637c808c655987b))
+
+### Action
+
+- Update `CHANGELOG.md` - ([463d32f](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/463d32fce0746916406a7ea5832679dfa6443b1f))
+
+
 ## [0.2.3](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.2.2..v0.2.3) - 2025-10-06
 
 ### 🚜 Refactor
