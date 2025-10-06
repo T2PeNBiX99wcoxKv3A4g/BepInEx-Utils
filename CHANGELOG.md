@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.2.5](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.2.4..v0.2.5) - 2025-10-06
+
+### 🚜 Refactor
+
+- *(EX)* Replace extension methods with `extension` keyword and add `[UsedImplicitly]` annotations - ([7ab23fa](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/7ab23fabdd0886e3df4654eb7d5c37a42d345914))
+
+### Action
+
+- Update `CHANGELOG.md` - ([292b41b](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/292b41bdd9020dfaf4543596ad7840c5626edac0))
+
+
 ## [0.2.4](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.2.3..v0.2.4) - 2025-10-06
 
 ### 🐛 Bug Fixes
