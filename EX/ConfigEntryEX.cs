@@ -1,33 +1,34 @@
 using BepInEx.Configuration;
+using JetBrains.Annotations;
 
-// ReSharper disable UnusedMember.Global
-// ReSharper disable UnusedType.Global
 // ReSharper disable InconsistentNaming
 
 namespace BepInExUtils.EX;
 
 public static class ConfigEntryEX
 {
-    // ReSharper disable once MemberCanBePrivate.Global
-    public static ConfigEntryEX<T> TryGetValue<T>(this ConfigEntry<T>? configEntry, T defaultValue = default!) =>
-        new(configEntry, defaultValue);
+    extension<T>(ConfigEntry<T>? configEntry)
+    {
+        [UsedImplicitly]
+        public ConfigEntryEX<T> TryGetValue(T defaultValue = default!) => new(configEntry, defaultValue);
 
-    public static ConfigEntryEX<T> Value<T>(this ConfigEntry<T>? configEntry) =>
-        TryGetValue(configEntry, (T?)configEntry?.DefaultValue ?? default!);
+        [UsedImplicitly]
+        public ConfigEntryEX<T> Value() => TryGetValue(configEntry, (T?)configEntry?.DefaultValue ?? default!);
+    }
 }
 
 public class ConfigEntryEX<T>(ConfigEntry<T>? configEntry, T defaultValue = default!)
 {
     private T _value => configEntry == null ? defaultValue : configEntry.Value;
 
+    [UsedImplicitly]
     public T V
     {
         get => _value;
         set => Set(value);
     }
 
-    // ReSharper disable once UnusedMember.Global
-    // ReSharper disable once MemberCanBePrivate.Global
+    [UsedImplicitly]
     public void Set(T value)
     {
         if (configEntry == null) return;

@@ -1,38 +1,42 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
-// ReSharper disable UnusedMember.Global
 // ReSharper disable InconsistentNaming
 
 namespace BepInExUtils.EX;
 
 public static class TransformEX
 {
-    public static string? FullName(this Transform transform)
+    extension(Transform transform)
     {
-        if (!transform) return null;
-        var tmpName = transform.name;
-
-        while (transform.parent)
+        public string? FullName()
         {
-            transform = transform.parent;
-            tmpName = transform.name + "/" + tmpName;
+            if (!transform) return null;
+            var tmpName = transform.name;
+
+            while (transform.parent)
+            {
+                transform = transform.parent;
+                tmpName = transform.name + "/" + tmpName;
+            }
+
+            return tmpName;
         }
 
-        return tmpName;
-    }
-
-    // From https://discussions.unity.com/t/world-scale/374693
-    public static Vector3 GetWorldScale(this Transform transform)
-    {
-        var worldScale = transform.localScale;
-        var parent = transform.parent;
-
-        while (parent)
+        // From https://discussions.unity.com/t/world-scale/374693
+        [UsedImplicitly]
+        public Vector3 GetWorldScale()
         {
-            worldScale = Vector3.Scale(worldScale, parent.localScale);
-            parent = parent.parent;
-        }
+            var worldScale = transform.localScale;
+            var parent = transform.parent;
 
-        return worldScale;
+            while (parent)
+            {
+                worldScale = Vector3.Scale(worldScale, parent.localScale);
+                parent = parent.parent;
+            }
+
+            return worldScale;
+        }
     }
 }

@@ -6,5 +6,8 @@ namespace BepInExUtils.EX;
 
 public static class GameObjectEX
 {
-    public static string? FullName(this GameObject obj) => !obj ? null : obj.transform.FullName();
+    extension(GameObject obj)
+    {
+        public string? FullName() => !obj ? null : obj.transform.FullName();
+    }
 }
