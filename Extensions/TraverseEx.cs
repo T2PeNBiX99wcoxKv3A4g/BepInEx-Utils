@@ -1,11 +1,9 @@
 using HarmonyLib;
 using JetBrains.Annotations;
 
-// ReSharper disable InconsistentNaming
+namespace BepInExUtils.Extensions;
 
-namespace BepInExUtils.EX;
-
-public class TraverseEX<T>(Traverse<T> traverse)
+public class TraverseEx<T>(Traverse<T> traverse)
 {
     private readonly Traverse<T> _traverse = traverse;
 
@@ -29,6 +27,6 @@ public class TraverseEX<T>(Traverse<T> traverse)
     [UsedImplicitly]
     public T Get() => _traverse.Value;
 
-    public static implicit operator T(TraverseEX<T> instance) => instance._traverse.Value;
-    public static explicit operator TraverseEX<T>(Traverse<T> traverse) => new(traverse);
+    public static implicit operator T(TraverseEx<T> instance) => instance._traverse.Value;
+    public static explicit operator TraverseEx<T>(Traverse<T> traverse) => new(traverse);
 }

@@ -1,11 +1,9 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-// ReSharper disable InconsistentNaming
+namespace BepInExUtils.Extensions;
 
-namespace BepInExUtils.EX;
-
-public static class ComponentEX
+public static class ComponentExtensions
 {
     extension(Component obj)
     {

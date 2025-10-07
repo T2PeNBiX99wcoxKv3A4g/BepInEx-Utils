@@ -1,11 +1,9 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-// ReSharper disable InconsistentNaming
+namespace BepInExUtils.Extensions;
 
-namespace BepInExUtils.EX;
-
-public static class TransformEX
+public static class TransformExtensions
 {
     extension(Transform transform)
     {

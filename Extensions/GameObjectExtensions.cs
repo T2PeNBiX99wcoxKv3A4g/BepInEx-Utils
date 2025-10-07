@@ -1,10 +1,8 @@
 using UnityEngine;
 
-// ReSharper disable InconsistentNaming
+namespace BepInExUtils.Extensions;
 
-namespace BepInExUtils.EX;
-
-public static class GameObjectEX
+public static class GameObjectExtensions
 {
     extension(GameObject obj)
     {
