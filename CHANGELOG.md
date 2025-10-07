@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.4.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.3.0..v0.4.0) - 2025-10-07
+
+### ⛰️  Features
+
+- Add `StringExtensions` class with utilities for extracting parts of a string. - ([468585b](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/468585b9d5944327b141527d557cb87187522186))
+
+### Action
+
+- Update `CHANGELOG.md` - ([a483a0a](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/a483a0a9ebb2cb478731c14f7b3ccadc368441b1))
+
+
 ## [0.3.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.2.5..v0.3.0) - 2025-10-07
 
 ### ⛰️  Features
