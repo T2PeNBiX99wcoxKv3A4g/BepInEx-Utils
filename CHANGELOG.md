@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.3.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.2.5..v0.3.0) - 2025-10-07
+
+### ⛰️  Features
+
+- Migrate `EX` namespace contents to `Extensions`, replace `EX` suffix with `Extensions`, and add new utility attributes - ([6e05aa3](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/6e05aa3177ba08431ceddd529325a224a758be9a))
+
+### Action
+
+- Update `CHANGELOG.md` - ([4f1d35a](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/4f1d35af4c0556e1ab868e6294a928e4fcef270b))
+
+
 ## [0.2.5](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.2.4..v0.2.5) - 2025-10-06
 
 ### 🚜 Refactor
