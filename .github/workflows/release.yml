@@ -129,11 +129,14 @@ jobs:
     steps:
       - name: Download Build Artifacts
         uses: actions/download-artifact@v5
+        with:
+          path: release
+          merge-multiple: true
 
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "release-windows/*.dll"
+          artifacts: "release/*"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ needs.windows-release-build.outputs.new_tag }}
           name: Release ${{ needs.windows-release-build.outputs.new_tag }}
@@ -177,8 +180,7 @@ jobs:
           ls -r .packaging/
           ls -r .packaging/dist
 
-      - name: Cd to `.packaging`
-        run: cd .packaging
-
       - name: Build Package
-        run: tcli publish --token ${{ secrets.THUNDERSTORE_TOKEN }} --package-version ${{ needs.windows-release-build.outputs.new_version }}
+        run: |
+          cd .packaging
+          tcli publish --token ${{ secrets.THUNDERSTORE_TOKEN }} --package-version ${{ needs.windows-release-build.outputs.new_version }}
