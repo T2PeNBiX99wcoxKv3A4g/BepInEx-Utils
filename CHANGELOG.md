@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.4.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.4.1..v0.4.2) - 2025-10-08
+
+### 🐛 Bug Fixes
+
+- *(workflows)* Restore Thunderstore package upload step and include LICENSE in packaging - ([0e74ba4](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/0e74ba4d0c515ff58794a9757a59f1af75d2f222))
+
+### Action
+
+- Update `CHANGELOG.md` - ([67c341f](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/67c341fbe8f0f1b2d995a10a6f2c2f826aca1192))
+
+
 ## [0.4.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.4.0..v0.4.1) - 2025-10-08
 
 ### 🐛 Bug Fixes
