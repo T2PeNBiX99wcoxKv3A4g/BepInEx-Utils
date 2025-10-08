@@ -2,6 +2,8 @@
 
 Utils for BepinEx
 
+![icon.png](icon.png)
+
 ### **This is just a library for my mods, download this only nothing will happen.**
 
 ## Installation

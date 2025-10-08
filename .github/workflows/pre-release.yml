@@ -17,6 +17,7 @@ jobs:
     runs-on: windows-latest
     outputs:
       new_tag: ${{ steps.tag_version.outputs.new_tag }}
+      new_version: ${{ steps.change_version.outputs.new_version }}
       changelog: ${{ steps.git-cliff2.outputs.content }}
     steps:
       - name: Check-out repository
@@ -39,6 +40,28 @@ jobs:
 
       - name: Pull changes
         run: git pull
+
+      - name: Clone `CSharp-Workflow-Scripts` Python script
+        run: git clone https://github.com/T2PeNBiX99wcoxKv3A4g/CSharp-Workflow-Scripts.git .scripts
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '>=3.14'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: pip install -r .scripts/requirements.txt
+
+      - name: Write version to `.version`
+        id: change_version
+        run: python .scripts/change_version.py create-version-file ${{ steps.tag_version.outputs.new_tag }}
+
+      - name: Echo version
+        run: echo ${{ steps.change_version.outputs.new_version }}
+
+      - name: Remove all python scripts
+        run: Remove-Item -Force -Recurse .scripts
 
       - name: Install `typos-cli` from `crates.io`
         uses: baptiste0928/cargo-install@v3

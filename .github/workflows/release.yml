@@ -15,8 +15,10 @@ jobs:
     permissions:
       contents: write
     runs-on: windows-latest
+    environment: Thunderstore
     outputs:
       new_tag: ${{ steps.tag_version.outputs.new_tag }}
+      new_version: ${{ steps.change_version.outputs.new_version }}
       changelog: ${{ steps.git-cliff2.outputs.content }}
     steps:
       - name: Check-out repository
@@ -38,6 +40,28 @@ jobs:
 
       - name: Pull changes
         run: git pull
+
+      - name: Clone `CSharp-Workflow-Scripts` Python script
+        run: git clone https://github.com/T2PeNBiX99wcoxKv3A4g/CSharp-Workflow-Scripts.git .scripts
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '>=3.14'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: pip install -r .scripts/requirements.txt
+
+      - name: Write version to `.version`
+        id: change_version
+        run: python .scripts/change_version.py create-version-file ${{ steps.tag_version.outputs.new_tag }}
+
+      - name: Echo version
+        run: echo ${{ steps.change_version.outputs.new_version }}
+
+      - name: Remove all python scripts
+        run: Remove-Item -Force -Recurse .scripts
 
       - name: Install `typos-cli` from `crates.io`
         uses: baptiste0928/cargo-install@v3
@@ -96,6 +120,31 @@ jobs:
         with:
           name: release-windows
           path: bin/Release/net48/BepInExUtils.dll
+      
+      - name: Create packaging folder
+        run: |
+          mkdir .packaging
+          cp CHANGELOG.md .packaging/CHANGELOG.md
+          cp README.md .packaging/README.md
+          cp icon.png .packaging/icon.png
+          cp bin/Release/net48/BepInExUtils.dll .packaging/BepInExUtils.dll
+
+#      - uses: GreenTF/upload-thunderstore-package@v4.3
+#        # noinspection GrazieInspection
+#        # noinspection SpellCheckingInspection
+#        with:
+#          namespace: ykysnk # the thunderstore 'team' to publish under
+#          description: Utils for BepinEx
+#          token: ${{ secrets.THUNDERSTORE_TOKEN }}
+#          name: BepinExUtils
+#          version: ${{ steps.change_version.outputs.new_version }}
+#          path: .packaging
+#          community: hollow-knight-silksong
+#          categories: |
+#            mods
+#            libraries
+#          deps: |
+#            BepInEx-BepInExPack_Silksong-5.4.2303
   
   upload:
     name: Create Release
