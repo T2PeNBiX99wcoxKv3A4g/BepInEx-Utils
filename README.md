@@ -2,7 +2,7 @@
 
 Utils for BepinEx
 
-![icon.png](icon.png)
+![icon.png](https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/master/icon.png)
 
 ### **This is just a library for my mods, download this only nothing will happen.**
 
