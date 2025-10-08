@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.4.4](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.4.3..v0.4.4) - 2025-10-08
+
+### 🐛 Bug Fixes
+
+- *(workflow)* Fix upload issue - ([7382b93](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/7382b93c2771f6d8613605ff8cb73dc90765da18))
+
+### Action
+
+- Update `CHANGELOG.md` - ([181f89b](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/181f89bcc4d717e8fad0b626b2bcbe47df065698))
+
+
 ## [0.4.3](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.4.2..v0.4.3) - 2025-10-08
 
 ### 🐛 Bug Fixes
