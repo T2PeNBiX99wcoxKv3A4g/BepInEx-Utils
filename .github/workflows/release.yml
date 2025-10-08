@@ -124,27 +124,26 @@ jobs:
       - name: Create packaging folder
         run: |
           mkdir .packaging
-          cp CHANGELOG.md .packaging/CHANGELOG.md
-          cp README.md .packaging/README.md
-          cp icon.png .packaging/icon.png
-          cp bin/Release/net48/BepInExUtils.dll .packaging/BepInExUtils.dll
+          copy CHANGELOG.md .packaging/CHANGELOG.md
+          copy README.md .packaging/README.md
+          copy icon.png .packaging/icon.png
+          copy LICENSE .packaging/LICENSE
+          copy bin/Release/net48/BepInExUtils.dll .packaging/BepInExUtils.dll
 
-#      - uses: GreenTF/upload-thunderstore-package@v4.3
-#        # noinspection GrazieInspection
-#        # noinspection SpellCheckingInspection
-#        with:
-#          namespace: ykysnk # the thunderstore 'team' to publish under
-#          description: Utils for BepinEx
-#          token: ${{ secrets.THUNDERSTORE_TOKEN }}
-#          name: BepinExUtils
-#          version: ${{ steps.change_version.outputs.new_version }}
-#          path: .packaging
-#          community: hollow-knight-silksong
-#          categories: |
-#            mods
-#            libraries
-#          deps: |
-#            BepInEx-BepInExPack_Silksong-5.4.2303
+      - uses: GreenTF/upload-thunderstore-package@v4.3
+        with:
+          namespace: ykysnk # the thunderstore 'team' to publish under
+          description: Utils for BepinEx
+          token: ${{ secrets.THUNDERSTORE_TOKEN }}
+          name: BepinExUtils
+          version: ${{ steps.change_version.outputs.new_version }}
+          path: .packaging
+          community: hollow-knight-silksong
+          categories: |
+            mods
+            libraries
+          deps: |
+            BepInEx-BepInExPack_Silksong-5.4.2303
   
   upload:
     name: Create Release
