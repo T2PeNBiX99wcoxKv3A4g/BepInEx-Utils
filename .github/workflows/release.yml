@@ -15,7 +15,6 @@ jobs:
     permissions:
       contents: write
     runs-on: windows-latest
-    environment: Thunderstore
     outputs:
       new_tag: ${{ steps.tag_version.outputs.new_tag }}
       new_version: ${{ steps.change_version.outputs.new_version }}
@@ -27,7 +26,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup .Net Core
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: '9.0'
 
@@ -45,7 +44,7 @@ jobs:
         run: git clone https://github.com/T2PeNBiX99wcoxKv3A4g/CSharp-Workflow-Scripts.git .scripts
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '>=3.14'
           cache: 'pip'
@@ -120,30 +119,6 @@ jobs:
         with:
           name: release-windows
           path: bin/Release/net48/BepInExUtils.dll
-      
-      - name: Create packaging folder
-        run: |
-          mkdir .packaging
-          copy CHANGELOG.md .packaging/CHANGELOG.md
-          copy README.md .packaging/README.md
-          copy icon.png .packaging/icon.png
-          copy LICENSE .packaging/LICENSE
-          copy bin/Release/net48/BepInExUtils.dll .packaging/BepInExUtils.dll
-
-      - uses: GreenTF/upload-thunderstore-package@v4.3
-        with:
-          namespace: ykysnk # the thunderstore 'team' to publish under
-          description: Utils for BepinEx
-          token: ${{ secrets.THUNDERSTORE_TOKEN }}
-          name: BepinExUtils
-          version: ${{ steps.change_version.outputs.new_version }}
-          path: .packaging
-          community: hollow-knight-silksong
-          categories: |
-            mods
-            libraries
-          deps: |
-            BepInEx-BepInExPack_Silksong-5.4.2303
   
   upload:
     name: Create Release
@@ -153,7 +128,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Build Artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
 
       - name: Create Release
         uses: ncipollo/release-action@v1
@@ -163,3 +138,47 @@ jobs:
           tag: ${{ needs.windows-release-build.outputs.new_tag }}
           name: Release ${{ needs.windows-release-build.outputs.new_tag }}
           body: ${{ needs.windows-release-build.outputs.changelog }}
+  
+  publish:
+    name: Publish to Thunderstore
+    needs: [ windows-release-build ]
+    runs-on: ubuntu-latest
+    environment: Thunderstore
+    steps:
+      - name: Check-out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup .Net Core
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '9.0'
+
+      - name: Install `tcli`
+        run: dotnet tool install -g tcli
+
+      - name: Copy files to `.packaging`
+        run: |
+          mkdir -p .packaging/dist
+          cp README.md .packaging/README.md
+          cp icon.png .packaging/icon.png
+          cp CHANGELOG.md .packaging/dist/CHANGELOG.md
+          cp LICENSE .packaging/dist/LICENSE
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: release-windows
+          path: .packaging/dist
+
+      - name: List all files
+        run: |
+          ls -r .packaging/
+          ls -r .packaging/dist
+
+      - name: Cd to `.packaging`
+        run: cd .packaging
+
+      - name: Build Package
+        run: tcli publish --token ${{ secrets.THUNDERSTORE_TOKEN }} --package-version ${{ needs.windows-release-build.outputs.new_version }}

@@ -37,6 +37,7 @@
     <ItemGroup>
         <Content Include=".github\workflows\pre-release.yml"/>
         <Content Include=".github\workflows\release.yml"/>
+        <Content Include=".packaging\thunderstore.toml"/>
     </ItemGroup>
 
 </Project>
