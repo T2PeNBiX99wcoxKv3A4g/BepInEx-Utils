@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.4.3](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.4.2..v0.4.3) - 2025-10-08
+
+### 🐛 Bug Fixes
+
+- *(workflows)* Add Thunderstore packaging configuration and update actions dependencies - ([36f20e4](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/36f20e40a71dcf488eadb4dc7b15d446339f8e26))
+
+### Action
+
+- Update `CHANGELOG.md` - ([5353147](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/5353147f9eb0b94bbae45c0ab0be69aabb4d82d6))
+
+
 ## [0.4.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.4.1..v0.4.2) - 2025-10-08
 
 ### 🐛 Bug Fixes
