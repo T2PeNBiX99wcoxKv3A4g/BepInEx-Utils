@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.5.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.5.0..v0.5.1) - 2025-10-09
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump `BepInEx-BepInExPack_Silksong` dependency to version 5.4.2304 - ([3803751](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/3803751b4f765c0d7727731f2db25e094607d5c8))
+
+### Action
+
+- Update `CHANGELOG.md` - ([2a2f323](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/2a2f32378c39b11cbaacef3e3d4c595045b06b88))
+
+
 ## [0.5.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.4.4..v0.5.0) - 2025-10-09
 
 ### ⛰️  Features
