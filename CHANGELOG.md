@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.5.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.5.1..v0.5.2) - 2025-10-09
+
+### 🐛 Bug Fixes
+
+- *(Extensions)* Replace inline indexing logic in `GetValueOrDefault` with `TryGetValue` for readability and consistency - ([45a21e9](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/45a21e95bc938cd67b861c12490df7871ff6eb71))
+
+### 🚜 Refactor
+
+- *(Extensions)* Replace `TryGetValue` with `GetValueOrDefault` for consistency and add `DictionaryExtensions` with utility method - ([f4e4124](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/f4e412463fe3946a6fa2200f6a1851198dd4ebf8))
+
+### Action
+
+- Update `CHANGELOG.md` - ([21c17a5](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/21c17a51b57ffb7734e2f251852b15cca20891f3))
+
+
 ## [0.5.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.5.0..v0.5.1) - 2025-10-09
 
 ### ⚙️ Miscellaneous Tasks
