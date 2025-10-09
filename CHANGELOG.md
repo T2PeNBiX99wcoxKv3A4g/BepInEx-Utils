@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.5.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.4.4..v0.5.0) - 2025-10-09
+
+### ⛰️  Features
+
+- Introduce new utility attributes and extend `Extensions` functionality - ([65c6e5d](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/65c6e5db49c6b29807eeae65786a60de310b9b51))
+
+### Action
+
+- Update `CHANGELOG.md` - ([a04436b](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/a04436b5150f852a715762a4909332216cbc2c50))
+
+
 ## [0.4.4](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.4.3..v0.4.4) - 2025-10-08
 
 ### 🐛 Bug Fixes
