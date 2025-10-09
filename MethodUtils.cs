@@ -1,7 +1,5 @@
 using System.Diagnostics;
-using HarmonyLib;
-
-// ReSharper disable UnusedMember.Global
+using JetBrains.Annotations;
 
 namespace BepInExUtils;
 
@@ -22,6 +20,7 @@ public static class MethodUtils
         }
     }
 
+    [UsedImplicitly]
     public static string MethodName
     {
         get
@@ -32,26 +31,5 @@ public static class MethodUtils
             var caller = frame.GetMethod();
             return caller == null ? UnknownName : caller.Name;
         }
-    }
-
-    public static T2? MethodAccess<T, T2>(this T obj, string methodName, params object?[] parameters)
-    {
-        if (obj == null)
-            throw new NullReferenceException($"obj {nameof(obj)} is null.");
-        var method = AccessTools.Method(obj.GetType(), methodName);
-        if (method == null)
-            throw new MethodAccessException($"Method {methodName} not found.");
-        var result = method.Invoke(obj, parameters);
-        return result is T2 a ? a : default;
-    }
-
-    public static void MethodAccess<T>(this T obj, string methodName, params object?[] parameters)
-    {
-        if (obj == null)
-            throw new NullReferenceException($"obj {nameof(obj)} is null.");
-        var method = AccessTools.Method(obj.GetType(), methodName);
-        if (method == null)
-            throw new MethodAccessException($"Method {methodName} not found.");
-        method.Invoke(obj, parameters);
     }
 }
