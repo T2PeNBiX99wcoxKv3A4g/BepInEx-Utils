@@ -41,6 +41,16 @@ public static class ObjectExtensions
             method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
         }
 
+        [Obsolete("Use object.MethodInvoke instead.")]
+        [UsedImplicitly]
+        public void MethodAccess(string methodName, params object?[] parameters) =>
+            obj.MethodInvoke(methodName, parameters);
+
+        [Obsolete("Use object.MethodInvoke instead.")]
+        [UsedImplicitly]
+        public T? MethodAccess<T>(string methodName, params object?[] parameters) =>
+            obj.MethodInvoke<T>(methodName, parameters);
+
         [UsedImplicitly]
         public T? GetFieldValue<T>(string fieldName)
         {
