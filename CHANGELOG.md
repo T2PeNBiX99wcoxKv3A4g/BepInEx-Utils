@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.6.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.6.1..v0.6.2) - 2025-10-10
+
+### 🚜 Refactor
+
+- *(ClassProxy)* Replace `Instance` with `_internalInstance` for clarity and encapsulation - ([6b634a8](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/6b634a8d02b47e7d5b6393323f8cdb61ef944003))
+
+### Action
+
+- Update `CHANGELOG.md` - ([ae8c67d](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/ae8c67ddb8242fa656a0e3f62c83e4ea235f713d))
+
+
 ## [0.6.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.6.0..v0.6.1) - 2025-10-10
 
 ### 🐛 Bug Fixes
