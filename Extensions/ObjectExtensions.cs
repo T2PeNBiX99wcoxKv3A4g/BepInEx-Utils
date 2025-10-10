@@ -12,7 +12,7 @@ public static class ObjectExtensions
         public T? MethodInvoke<T>(string methodName, params object?[] parameters)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
             var parametersTypes = AccessTools.GetTypes(parameters);
@@ -34,7 +34,7 @@ public static class ObjectExtensions
         public object? GenericMethodInvoke<T>(string methodName, params object?[] parameters)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
             var parametersTypes = AccessTools.GetTypes(parameters);
@@ -56,7 +56,7 @@ public static class ObjectExtensions
         public object? GenericMethodInvoke<T, T2>(string methodName, params object?[] parameters)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
             var parametersTypes = AccessTools.GetTypes(parameters);
@@ -78,7 +78,7 @@ public static class ObjectExtensions
         public object? GenericMethodInvoke<T, T2, T3>(string methodName, params object?[] parameters)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
             var parametersTypes = AccessTools.GetTypes(parameters);
@@ -100,7 +100,7 @@ public static class ObjectExtensions
         public object? GenericMethodInvoke<T, T2, T3, T4>(string methodName, params object?[] parameters)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
             var parametersTypes = AccessTools.GetTypes(parameters);
@@ -122,7 +122,7 @@ public static class ObjectExtensions
         public object? GenericMethodInvoke<T, T2, T3, T4, T5>(string methodName, params object?[] parameters)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
             var parametersTypes = AccessTools.GetTypes(parameters);
@@ -144,7 +144,7 @@ public static class ObjectExtensions
         public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6>(string methodName, params object?[] parameters)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
             var parametersTypes = AccessTools.GetTypes(parameters);
@@ -166,7 +166,7 @@ public static class ObjectExtensions
         public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7>(string methodName, params object?[] parameters)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
             var parametersTypes = AccessTools.GetTypes(parameters);
@@ -190,7 +190,7 @@ public static class ObjectExtensions
             params object?[] parameters)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
             var parametersTypes = AccessTools.GetTypes(parameters);
@@ -214,7 +214,7 @@ public static class ObjectExtensions
             params object?[] parameters)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
             var parametersTypes = AccessTools.GetTypes(parameters);
@@ -238,7 +238,7 @@ public static class ObjectExtensions
             params object?[] parameters)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
             var parametersTypes = AccessTools.GetTypes(parameters);
@@ -261,7 +261,7 @@ public static class ObjectExtensions
         public void MethodInvoke(string methodName, params object?[] parameters)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
             var parametersTypes = AccessTools.GetTypes(parameters);
@@ -292,7 +292,7 @@ public static class ObjectExtensions
         public T? GetFieldValue<T>(string fieldName)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(fieldName))
                 throw new ArgumentNullException(nameof(fieldName));
             var field = AccessTools.Field(obj.GetType(), fieldName);
@@ -306,7 +306,7 @@ public static class ObjectExtensions
         public void SetFieldValue<T>(string fieldName, T value)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(fieldName))
                 throw new ArgumentNullException(nameof(fieldName));
             var field = AccessTools.Field(obj.GetType(), fieldName);
@@ -319,7 +319,7 @@ public static class ObjectExtensions
         public T? GetPropertyValue<T>(string propertyName)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(propertyName))
                 throw new ArgumentNullException(nameof(propertyName));
             var property = AccessTools.Property(obj.GetType(), propertyName);
@@ -336,7 +336,7 @@ public static class ObjectExtensions
         public void SetPropertyValue<T>(string propertyName, T value)
         {
             if (obj == null)
-                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+                throw new ArgumentNullException(nameof(obj));
             if (string.IsNullOrWhiteSpace(propertyName))
                 throw new ArgumentNullException(nameof(propertyName));
             var property = AccessTools.Property(obj.GetType(), propertyName);
