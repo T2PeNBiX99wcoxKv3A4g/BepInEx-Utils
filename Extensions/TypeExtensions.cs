@@ -11,9 +11,12 @@ public static class TypeExtensions
         [UsedImplicitly]
         public T? MethodInvokeInType<T>(string methodName, params object?[] parameters)
         {
-            var method = AccessTools.Method(type, methodName);
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(type, methodName, parametersTypes);
             if (method == null)
-                throw new MethodAccessException($"Method {methodName} not found.");
+                throw new MethodAccessException($"Method {methodName} with parameters {parametersTypes} not found.");
             if (method.GetParameters().Length != parameters?.Length)
                 throw new TargetParameterCountException($"Method {methodName} parameters count not match.");
             var result = method.Invoke(null, parameters ?? []);
@@ -23,9 +26,12 @@ public static class TypeExtensions
         [UsedImplicitly]
         public void MethodInvokeInType(string methodName, params object?[] parameters)
         {
-            var method = AccessTools.Method(type, methodName);
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(type, methodName, parametersTypes);
             if (method == null)
-                throw new MethodAccessException($"Method {methodName} not found.");
+                throw new MethodAccessException($"Method {methodName} with parameters {parametersTypes} not found.");
             if (method.GetParameters().Length != parameters?.Length)
                 throw new TargetParameterCountException($"Method {methodName} parameters count not match.");
             method.Invoke(null, parameters ?? []);
@@ -34,6 +40,8 @@ public static class TypeExtensions
         [UsedImplicitly]
         public T? GetFieldValueInType<T>(string fieldName)
         {
+            if (string.IsNullOrWhiteSpace(fieldName))
+                throw new ArgumentNullException(nameof(fieldName));
             var field = AccessTools.Field(type, fieldName);
             if (field == null)
                 throw new FieldAccessException($"Field {fieldName} not found.");
@@ -44,6 +52,8 @@ public static class TypeExtensions
         [UsedImplicitly]
         public void SetFieldValueInType<T>(string fieldName, T value)
         {
+            if (string.IsNullOrWhiteSpace(fieldName))
+                throw new ArgumentNullException(nameof(fieldName));
             var field = AccessTools.Field(type, fieldName);
             if (field == null)
                 throw new FieldAccessException($"Field {fieldName} not found.");
@@ -53,6 +63,8 @@ public static class TypeExtensions
         [UsedImplicitly]
         public T? GetPropertyValueInType<T>(string propertyName)
         {
+            if (string.IsNullOrWhiteSpace(propertyName))
+                throw new ArgumentNullException(nameof(propertyName));
             var property = AccessTools.Property(type, propertyName);
             if (property == null)
                 throw new MemberAccessException($"Property {propertyName} not found.");
@@ -66,6 +78,8 @@ public static class TypeExtensions
         [UsedImplicitly]
         public void SetPropertyValueInType<T>(string propertyName, T value)
         {
+            if (string.IsNullOrWhiteSpace(propertyName))
+                throw new ArgumentNullException(nameof(propertyName));
             var property = AccessTools.Property(type, propertyName);
             if (property == null)
                 throw new MemberAccessException($"Property {propertyName} not found.");

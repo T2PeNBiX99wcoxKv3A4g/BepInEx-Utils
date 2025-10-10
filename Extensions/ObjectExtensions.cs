@@ -13,9 +13,12 @@ public static class ObjectExtensions
         {
             if (obj == null)
                 throw new NullReferenceException($"obj {nameof(obj)} is null.");
-            var method = AccessTools.Method(obj.GetType(), methodName);
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
             if (method == null)
-                throw new MethodAccessException($"Method {methodName} not found.");
+                throw new MethodAccessException($"Method {methodName} with parameters {parametersTypes} not found.");
             if (method.GetParameters().Length != parameters?.Length)
                 throw new TargetParameterCountException($"Method {methodName} parameters count not match.");
             var result = method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
@@ -27,9 +30,12 @@ public static class ObjectExtensions
         {
             if (obj == null)
                 throw new NullReferenceException($"obj {nameof(obj)} is null.");
-            var method = AccessTools.Method(obj.GetType(), methodName);
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
             if (method == null)
-                throw new MethodAccessException($"Method {methodName} not found.");
+                throw new MethodAccessException($"Method {methodName} with parameters {parametersTypes} not found.");
             if (method.GetParameters().Length != parameters?.Length)
                 throw new TargetParameterCountException($"Method {methodName} parameters count not match.");
             method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
@@ -40,6 +46,8 @@ public static class ObjectExtensions
         {
             if (obj == null)
                 throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(fieldName))
+                throw new ArgumentNullException(nameof(fieldName));
             var field = AccessTools.Field(obj.GetType(), fieldName);
             if (field == null)
                 throw new FieldAccessException($"Field {fieldName} not found.");
@@ -52,6 +60,8 @@ public static class ObjectExtensions
         {
             if (obj == null)
                 throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(fieldName))
+                throw new ArgumentNullException(nameof(fieldName));
             var field = AccessTools.Field(obj.GetType(), fieldName);
             if (field == null)
                 throw new FieldAccessException($"Field {fieldName} not found.");
@@ -63,6 +73,8 @@ public static class ObjectExtensions
         {
             if (obj == null)
                 throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(propertyName))
+                throw new ArgumentNullException(nameof(propertyName));
             var property = AccessTools.Property(obj.GetType(), propertyName);
             if (property == null)
                 throw new MemberAccessException($"Property {propertyName} not found.");
@@ -78,6 +90,8 @@ public static class ObjectExtensions
         {
             if (obj == null)
                 throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(propertyName))
+                throw new ArgumentNullException(nameof(propertyName));
             var property = AccessTools.Property(obj.GetType(), propertyName);
             if (property == null)
                 throw new MemberAccessException($"Property {propertyName} not found.");
