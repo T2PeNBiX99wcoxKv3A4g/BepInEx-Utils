@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.6.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.6.0..v0.6.1) - 2025-10-10
+
+### 🐛 Bug Fixes
+
+- *(Extensions)* Replace `NullReferenceException` with `ArgumentNullException` for null `obj` checks in reflection utilities - ([7b0dfe6](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/7b0dfe62266d9a77933545eaf2e161b234aa911b))
+
+### Action
+
+- Update `CHANGELOG.md` - ([1752fc6](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/1752fc6d445a5bbc2558fb8e67739d20d4bbabcd))
+
+
 ## [0.6.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.5.2..v0.6.0) - 2025-10-10
 
 ### ⛰️  Features
