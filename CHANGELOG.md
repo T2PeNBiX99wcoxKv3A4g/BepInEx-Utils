@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.6.4](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.6.3..v0.6.4) - 2025-10-10
+
+### 🐛 Bug Fixes
+
+- *(ClassProxy)* Add detailed type validation and improved exception handling - ([307c575](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/307c575baf09e6fc68e757e7c7629061f7c8958d))
+
+### Action
+
+- Update `CHANGELOG.md` - ([78a5896](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/78a5896296321e8d133eea65937b28c1d2d1e6d5))
+
+
 ## [0.6.3](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.6.2..v0.6.3) - 2025-10-10
 
 ### 🚜 Refactor
