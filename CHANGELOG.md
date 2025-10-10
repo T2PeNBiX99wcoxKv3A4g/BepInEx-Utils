@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.6.3](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.6.2..v0.6.3) - 2025-10-10
+
+### 🚜 Refactor
+
+- *(ClassProxy)* Simplify `MethodAccess` implementation by using expression-bodied member - ([41969e0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/41969e042d3bf4fe6e61efb908853883674ee2ee))
+
+### Action
+
+- Update `CHANGELOG.md` - ([e7b08f4](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/e7b08f4144e178d08357dcf7593d791767724643))
+
+
 ## [0.6.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.6.1..v0.6.2) - 2025-10-10
 
 ### 🚜 Refactor
