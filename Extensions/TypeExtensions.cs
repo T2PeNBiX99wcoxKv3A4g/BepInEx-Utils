@@ -22,9 +22,9 @@ public static class TypeExtensions
                     $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
             if (method.IsGenericMethod)
                 throw new MethodAccessException("use Type.GenericMethodInvokeInType instead.");
-            if (method.GetParameters().Length != parameters?.Length)
+            if (method.GetParameters().Length != parameters.Length)
                 throw new TargetParameterCountException($"Method {methodName} parameters count not match.");
-            var result = method.Invoke(null, parameters ?? []);
+            var result = method.Invoke(null, parameters);
             return result is T a ? a : default;
         }
 
@@ -43,9 +43,9 @@ public static class TypeExtensions
             if (!method.IsGenericMethod)
                 throw new MethodAccessException($"Method {methodName} is not generic method.");
             method = method.MakeGenericMethod(typeof(T));
-            return method.GetParameters().Length != parameters?.Length
+            return method.GetParameters().Length != parameters.Length
                 ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
-                : method.Invoke(null, parameters ?? []);
+                : method.Invoke(null, parameters);
         }
 
         [UsedImplicitly]
@@ -63,9 +63,9 @@ public static class TypeExtensions
             if (!method.IsGenericMethod)
                 throw new MethodAccessException($"Method {methodName} is not generic method.");
             method = method.MakeGenericMethod(typeof(T), typeof(T2));
-            return method.GetParameters().Length != parameters?.Length
+            return method.GetParameters().Length != parameters.Length
                 ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
-                : method.Invoke(null, parameters ?? []);
+                : method.Invoke(null, parameters);
         }
 
         [UsedImplicitly]
@@ -83,9 +83,9 @@ public static class TypeExtensions
             if (!method.IsGenericMethod)
                 throw new MethodAccessException($"Method {methodName} is not generic method.");
             method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3));
-            return method.GetParameters().Length != parameters?.Length
+            return method.GetParameters().Length != parameters.Length
                 ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
-                : method.Invoke(null, parameters ?? []);
+                : method.Invoke(null, parameters);
         }
 
         [UsedImplicitly]
@@ -103,9 +103,9 @@ public static class TypeExtensions
             if (!method.IsGenericMethod)
                 throw new MethodAccessException($"Method {methodName} is not generic method.");
             method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4));
-            return method.GetParameters().Length != parameters?.Length
+            return method.GetParameters().Length != parameters.Length
                 ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
-                : method.Invoke(null, parameters ?? []);
+                : method.Invoke(null, parameters);
         }
 
         [UsedImplicitly]
@@ -123,9 +123,9 @@ public static class TypeExtensions
             if (!method.IsGenericMethod)
                 throw new MethodAccessException($"Method {methodName} is not generic method.");
             method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4), typeof(T5));
-            return method.GetParameters().Length != parameters?.Length
+            return method.GetParameters().Length != parameters.Length
                 ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
-                : method.Invoke(null, parameters ?? []);
+                : method.Invoke(null, parameters);
         }
 
         [UsedImplicitly]
@@ -143,9 +143,9 @@ public static class TypeExtensions
             if (!method.IsGenericMethod)
                 throw new MethodAccessException($"Method {methodName} is not generic method.");
             method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6));
-            return method.GetParameters().Length != parameters?.Length
+            return method.GetParameters().Length != parameters.Length
                 ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
-                : method.Invoke(null, parameters ?? []);
+                : method.Invoke(null, parameters);
         }
 
         [UsedImplicitly]
@@ -165,9 +165,9 @@ public static class TypeExtensions
                 throw new MethodAccessException($"Method {methodName} is not generic method.");
             method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6),
                 typeof(T7));
-            return method.GetParameters().Length != parameters?.Length
+            return method.GetParameters().Length != parameters.Length
                 ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
-                : method.Invoke(null, parameters ?? []);
+                : method.Invoke(null, parameters);
         }
 
         [UsedImplicitly]
@@ -187,9 +187,9 @@ public static class TypeExtensions
                 throw new MethodAccessException($"Method {methodName} is not generic method.");
             method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6),
                 typeof(T7), typeof(T8));
-            return method.GetParameters().Length != parameters?.Length
+            return method.GetParameters().Length != parameters.Length
                 ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
-                : method.Invoke(null, parameters ?? []);
+                : method.Invoke(null, parameters);
         }
 
         [UsedImplicitly]
@@ -209,9 +209,9 @@ public static class TypeExtensions
                 throw new MethodAccessException($"Method {methodName} is not generic method.");
             method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6),
                 typeof(T7), typeof(T8), typeof(T9));
-            return method.GetParameters().Length != parameters?.Length
+            return method.GetParameters().Length != parameters.Length
                 ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
-                : method.Invoke(null, parameters ?? []);
+                : method.Invoke(null, parameters);
         }
 
         [UsedImplicitly]
@@ -231,9 +231,9 @@ public static class TypeExtensions
                 throw new MethodAccessException($"Method {methodName} is not generic method.");
             method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6),
                 typeof(T7), typeof(T8), typeof(T9), typeof(T10));
-            return method.GetParameters().Length != parameters?.Length
+            return method.GetParameters().Length != parameters.Length
                 ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
-                : method.Invoke(null, parameters ?? []);
+                : method.Invoke(null, parameters);
         }
 
         [UsedImplicitly]
@@ -250,9 +250,9 @@ public static class TypeExtensions
                     $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
             if (method.IsGenericMethod)
                 throw new MethodAccessException("use Type.GenericMethodInvokeInType instead.");
-            if (method.GetParameters().Length != parameters?.Length)
+            if (method.GetParameters().Length != parameters.Length)
                 throw new TargetParameterCountException($"Method {methodName} parameters count not match.");
-            method.Invoke(null, parameters ?? []);
+            method.Invoke(null, parameters);
         }
 
         [UsedImplicitly]
