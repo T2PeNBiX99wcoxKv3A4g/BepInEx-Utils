@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.6.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.5.2..v0.6.0) - 2025-10-10
+
+### ⛰️  Features
+
+- *(Extensions)* Add generic method invocation utilities in `ObjectExtensions` and `TypeExtensions` - ([68c4a2f](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/68c4a2f2536e2b10f67ba6ecc9969184768eee1c))
+- *(Extensions)* Extend `ObjectExtensions` and introduce `TypeExtensions` for enhanced reflection utilities - ([dbd653b](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/dbd653b2061bd26f1580564cc46d748bb0f4bea3))
+
+### 🐛 Bug Fixes
+
+- *(Extensions)* Remove unnecessary null-coalescing for parameters in method invocation utilities - ([2be87eb](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/2be87eba9bb2d51bc2b9a8dcd24967f69a79213c))
+- *(Extensions)* Mark `MethodAccess` methods as obsolete and recommend `MethodInvoke` as replacement - ([66f56a3](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/66f56a370eacd809503fbb36b54a225b428ed42d))
+- *(Extensions)* Add null/empty checks for method, field, and property names in reflection utilities - ([2549ecc](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/2549ecc145435add78a53467e0dced423d81381f))
+
+### Action
+
+- Update `CHANGELOG.md` - ([a138fab](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/a138fabf9ee10d748e812e65933a84f4e5f32b7b))
+
+
 ## [0.5.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.5.1..v0.5.2) - 2025-10-09
 
 ### 🐛 Bug Fixes
