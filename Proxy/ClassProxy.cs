@@ -58,8 +58,6 @@ public abstract class ClassProxy
 
     [Obsolete("Use object.MethodInvoke instead.")]
     [UsedImplicitly]
-    protected void MethodAccess(string methodName, params object?[] parameters)
-    {
+    protected void MethodAccess(string methodName, params object?[] parameters) =>
         Instance.MethodInvoke(methodName, parameters);
-    }
 }
