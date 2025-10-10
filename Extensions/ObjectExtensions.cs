@@ -18,11 +18,243 @@ public static class ObjectExtensions
             var parametersTypes = AccessTools.GetTypes(parameters);
             var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
             if (method == null)
-                throw new MethodAccessException($"Method {methodName} with parameters {parametersTypes} not found.");
+                method = AccessTools.Method(obj.GetType(), methodName);
+            if (method == null)
+                throw new MethodAccessException(
+                    $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
+            if (method.IsGenericMethod)
+                throw new MethodAccessException("use object.GenericMethodInvoke instead.");
             if (method.GetParameters().Length != parameters?.Length)
                 throw new TargetParameterCountException($"Method {methodName} parameters count not match.");
             var result = method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
             return result is T a ? a : default;
+        }
+
+        [UsedImplicitly]
+        public object? GenericMethodInvoke<T>(string methodName, params object?[] parameters)
+        {
+            if (obj == null)
+                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
+            if (method == null)
+                method = AccessTools.Method(obj.GetType(), methodName);
+            if (method == null)
+                throw new MethodAccessException(
+                    $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
+            if (!method.IsGenericMethod)
+                throw new MethodAccessException($"Method {methodName} is not generic method.");
+            method = method.MakeGenericMethod(typeof(T));
+            return method.GetParameters().Length != parameters?.Length
+                ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
+                : method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
+        }
+
+        [UsedImplicitly]
+        public object? GenericMethodInvoke<T, T2>(string methodName, params object?[] parameters)
+        {
+            if (obj == null)
+                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
+            if (method == null)
+                method = AccessTools.Method(obj.GetType(), methodName);
+            if (method == null)
+                throw new MethodAccessException(
+                    $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
+            if (!method.IsGenericMethod)
+                throw new MethodAccessException($"Method {methodName} is not generic method.");
+            method = method.MakeGenericMethod(typeof(T), typeof(T2));
+            return method.GetParameters().Length != parameters?.Length
+                ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
+                : method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
+        }
+
+        [UsedImplicitly]
+        public object? GenericMethodInvoke<T, T2, T3>(string methodName, params object?[] parameters)
+        {
+            if (obj == null)
+                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
+            if (method == null)
+                method = AccessTools.Method(obj.GetType(), methodName);
+            if (method == null)
+                throw new MethodAccessException(
+                    $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
+            if (!method.IsGenericMethod)
+                throw new MethodAccessException($"Method {methodName} is not generic method.");
+            method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3));
+            return method.GetParameters().Length != parameters?.Length
+                ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
+                : method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
+        }
+
+        [UsedImplicitly]
+        public object? GenericMethodInvoke<T, T2, T3, T4>(string methodName, params object?[] parameters)
+        {
+            if (obj == null)
+                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
+            if (method == null)
+                method = AccessTools.Method(obj.GetType(), methodName);
+            if (method == null)
+                throw new MethodAccessException(
+                    $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
+            if (!method.IsGenericMethod)
+                throw new MethodAccessException($"Method {methodName} is not generic method.");
+            method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4));
+            return method.GetParameters().Length != parameters?.Length
+                ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
+                : method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
+        }
+
+        [UsedImplicitly]
+        public object? GenericMethodInvoke<T, T2, T3, T4, T5>(string methodName, params object?[] parameters)
+        {
+            if (obj == null)
+                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
+            if (method == null)
+                method = AccessTools.Method(obj.GetType(), methodName);
+            if (method == null)
+                throw new MethodAccessException(
+                    $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
+            if (!method.IsGenericMethod)
+                throw new MethodAccessException($"Method {methodName} is not generic method.");
+            method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4), typeof(T5));
+            return method.GetParameters().Length != parameters?.Length
+                ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
+                : method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
+        }
+
+        [UsedImplicitly]
+        public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6>(string methodName, params object?[] parameters)
+        {
+            if (obj == null)
+                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
+            if (method == null)
+                method = AccessTools.Method(obj.GetType(), methodName);
+            if (method == null)
+                throw new MethodAccessException(
+                    $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
+            if (!method.IsGenericMethod)
+                throw new MethodAccessException($"Method {methodName} is not generic method.");
+            method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6));
+            return method.GetParameters().Length != parameters?.Length
+                ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
+                : method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
+        }
+
+        [UsedImplicitly]
+        public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7>(string methodName, params object?[] parameters)
+        {
+            if (obj == null)
+                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
+            if (method == null)
+                method = AccessTools.Method(obj.GetType(), methodName);
+            if (method == null)
+                throw new MethodAccessException(
+                    $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
+            if (!method.IsGenericMethod)
+                throw new MethodAccessException($"Method {methodName} is not generic method.");
+            method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6),
+                typeof(T7));
+            return method.GetParameters().Length != parameters?.Length
+                ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
+                : method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
+        }
+
+        [UsedImplicitly]
+        public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7, T8>(string methodName,
+            params object?[] parameters)
+        {
+            if (obj == null)
+                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
+            if (method == null)
+                method = AccessTools.Method(obj.GetType(), methodName);
+            if (method == null)
+                throw new MethodAccessException(
+                    $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
+            if (!method.IsGenericMethod)
+                throw new MethodAccessException($"Method {methodName} is not generic method.");
+            method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6),
+                typeof(T7), typeof(T8));
+            return method.GetParameters().Length != parameters?.Length
+                ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
+                : method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
+        }
+
+        [UsedImplicitly]
+        public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7, T8, T9>(string methodName,
+            params object?[] parameters)
+        {
+            if (obj == null)
+                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
+            if (method == null)
+                method = AccessTools.Method(obj.GetType(), methodName);
+            if (method == null)
+                throw new MethodAccessException(
+                    $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
+            if (!method.IsGenericMethod)
+                throw new MethodAccessException($"Method {methodName} is not generic method.");
+            method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6),
+                typeof(T7), typeof(T8), typeof(T9));
+            return method.GetParameters().Length != parameters?.Length
+                ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
+                : method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
+        }
+
+        [UsedImplicitly]
+        public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7, T8, T9, T10>(string methodName,
+            params object?[] parameters)
+        {
+            if (obj == null)
+                throw new NullReferenceException($"obj {nameof(obj)} is null.");
+            if (string.IsNullOrWhiteSpace(methodName))
+                throw new ArgumentNullException(nameof(methodName));
+            var parametersTypes = AccessTools.GetTypes(parameters);
+            var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
+            if (method == null)
+                method = AccessTools.Method(obj.GetType(), methodName);
+            if (method == null)
+                throw new MethodAccessException(
+                    $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
+            if (!method.IsGenericMethod)
+                throw new MethodAccessException($"Method {methodName} is not generic method.");
+            method = method.MakeGenericMethod(typeof(T), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6),
+                typeof(T7), typeof(T8), typeof(T9), typeof(T10));
+            return method.GetParameters().Length != parameters?.Length
+                ? throw new TargetParameterCountException($"Method {methodName} parameters count not match.")
+                : method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
         }
 
         [UsedImplicitly]
@@ -35,7 +267,12 @@ public static class ObjectExtensions
             var parametersTypes = AccessTools.GetTypes(parameters);
             var method = AccessTools.Method(obj.GetType(), methodName, parametersTypes);
             if (method == null)
-                throw new MethodAccessException($"Method {methodName} with parameters {parametersTypes} not found.");
+                method = AccessTools.Method(obj.GetType(), methodName);
+            if (method == null)
+                throw new MethodAccessException(
+                    $"Method {methodName} with parameters [{string.Join(", ", parametersTypes.ToList())}] not found.");
+            if (method.IsGenericMethod)
+                throw new MethodAccessException("use object.GenericMethodInvoke instead.");
             if (method.GetParameters().Length != parameters?.Length)
                 throw new TargetParameterCountException($"Method {methodName} parameters count not match.");
             method.Invoke(method.IsStatic ? null : obj, parameters ?? []);
