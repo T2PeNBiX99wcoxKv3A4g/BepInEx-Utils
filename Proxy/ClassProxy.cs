@@ -16,6 +16,10 @@ public abstract class ClassProxy
         if (string.IsNullOrEmpty(className))
             throw new ArgumentException("Class name cannot be null or empty", className);
         Type = AccessTools.TypeByName(className);
+        if (Type == null)
+            throw new TypeAccessException($"Type {className} not found.");
+        if (Type.BaseType == GetType())
+            throw new TypeAccessException($"Type {className} is subclass of {GetType().Name}.");
         _internalInstance = instance ?? throw new NullReferenceException("instance is null");
     }
 
@@ -24,7 +28,12 @@ public abstract class ClassProxy
         if (string.IsNullOrEmpty(className))
             throw new ArgumentException("Class name cannot be null or empty", className);
         Type = AccessTools.TypeByName(className);
-        if (Type.IsAbstract) return;
+        if (Type == null)
+            throw new TypeAccessException($"Type {className} not found.");
+        if (Type.BaseType == GetType())
+            throw new TypeAccessException($"Type {className} is subclass of {GetType().Name}.");
+        if (Type.IsAbstract)
+            throw new TypeAccessException($"Type {className} is abstract class.");
         _internalInstance = Activator.CreateInstance(Type) ??
                             throw new NullReferenceException("Could not create instance");
     }
@@ -34,9 +43,14 @@ public abstract class ClassProxy
         if (string.IsNullOrEmpty(className))
             throw new ArgumentException("Class name cannot be null or empty", className);
         Type = AccessTools.TypeByName(className);
-        _internalInstance =
-            typeof(Activator).GetMethod(nameof(Activator.CreateInstance))?.Invoke(_internalInstance, args) ??
-            throw new NullReferenceException("Could not create instance");
+        if (Type == null)
+            throw new TypeAccessException($"Type {className} not found.");
+        if (Type.BaseType == GetType())
+            throw new TypeAccessException($"Type {className} is subclass of {GetType().Name}.");
+        if (Type.IsAbstract)
+            throw new TypeAccessException($"Type {className} is abstract class.");
+        _internalInstance = Activator.CreateInstance(Type, args) ??
+                            throw new NullReferenceException("Could not create instance");
     }
 
     protected ClassProxy(string className, object[] args, object[] activationAttributes)
@@ -44,6 +58,12 @@ public abstract class ClassProxy
         if (string.IsNullOrEmpty(className))
             throw new ArgumentException("Class name cannot be null or empty", className);
         Type = AccessTools.TypeByName(className);
+        if (Type == null)
+            throw new TypeAccessException($"Type {className} not found.");
+        if (Type.BaseType == GetType())
+            throw new TypeAccessException($"Type {className} is subclass of {GetType().Name}.");
+        if (Type.IsAbstract)
+            throw new TypeAccessException($"Type {className} is abstract class.");
         _internalInstance = Activator.CreateInstance(Type, args, activationAttributes) ??
                             throw new NullReferenceException("Could not create instance");
     }
