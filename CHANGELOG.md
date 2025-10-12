@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.0..v0.7.1) - 2025-10-12
+
+### ⚙️ Miscellaneous Tasks
+
+- *(UnityModules)* Change UnityEngine module libraries to older versions - ([1688a8d](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/1688a8dffc5c334eeae80ad36bcaf8dd2b6a9db8))
+
+### Action
+
+- Update `CHANGELOG.md` - ([5a73b81](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/5a73b810caf0f2da219574bfa8587da5f92f8ce8))
+
+
 ## [0.7.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.6.4..v0.7.0) - 2025-10-12
 
 ### ⛰️  Features
