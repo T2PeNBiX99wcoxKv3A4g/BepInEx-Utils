@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.1..v0.7.2) - 2025-10-12
+
+### ⚙️ Miscellaneous Tasks
+
+- *(packaging)* Add missing `dependencies` section to `thunderstore.toml` - ([bb12a4a](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/bb12a4a8dddbe510700ae2930878eeaf92bedb41))
+
+### Action
+
+- Update `CHANGELOG.md` - ([db34573](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/db3457386cd1d69ec56d393560724999ee20e692))
+
+
 ## [0.7.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.0..v0.7.1) - 2025-10-12
 
 ### ⚙️ Miscellaneous Tasks
