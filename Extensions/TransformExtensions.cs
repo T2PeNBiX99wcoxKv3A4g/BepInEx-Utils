@@ -9,7 +9,6 @@ public static class TransformExtensions
     {
         public string? FullName()
         {
-            if (!transform) return null;
             var tmpName = transform.name;
 
             while (transform.parent)
