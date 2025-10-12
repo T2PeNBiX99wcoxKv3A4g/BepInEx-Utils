@@ -29,8 +29,14 @@
         <Reference Include="UnityEngine">
             <HintPath>Lib\UnityEngine.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.AssetBundleModule">
+            <HintPath>Lib\UnityEngine.AssetBundleModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.CoreModule">
             <HintPath>Lib\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ImageConversionModule">
+            <HintPath>Lib\UnityEngine.ImageConversionModule.dll</HintPath>
         </Reference>
     </ItemGroup>
 
