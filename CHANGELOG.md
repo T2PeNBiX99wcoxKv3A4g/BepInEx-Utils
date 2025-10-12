@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.7.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.6.4..v0.7.0) - 2025-10-12
+
+### ⛰️  Features
+
+- *(Extensions)* Add `AssemblyExtensions` for embedded resource handling - ([3b79fa0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/3b79fa0fb3242ad7670d5bd5e15538431754f2cd))
+
+### 🐛 Bug Fixes
+
+- *(Extensions)* Remove redundant null check in `FullName` method of `TransformExtensions` - ([e331b44](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/e331b44b5ade06fe32654372f2761402cf516a59))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(packaging)* Remove unused dependency from `thunderstore.toml` - ([ad39025](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/ad39025a654afd7cc8fcc7978bec1bb859ca0933))
+- *(workflows)* Add `git pull` step in release workflow - ([e9bfb1b](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/e9bfb1bf7d14cc929ad044fd47ba0ce560c249bf))
+
+### Action
+
+- Update `CHANGELOG.md` - ([629ab98](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/629ab988377a126338d4e74c97edc5183be7c61d))
+
+
 ## [0.6.4](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.6.3..v0.6.4) - 2025-10-10
 
 ### 🐛 Bug Fixes
