@@ -8,6 +8,7 @@ versionNumber = "0.0.1" # will be replaced
 description = "Utils for BepinEx"
 websiteUrl = "https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils"
 containsNsfwContent = false
+[package.dependencies]
 
 [build]
 icon = "./icon.png"
