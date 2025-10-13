@@ -24,9 +24,12 @@ public static class AssemblyExtensions
         public byte[] GetEmbeddedResourceBytes(string resource)
         {
             using var stream = assembly.GetManifestResourceStreamOrThrow(resource);
+            using var memoryStream = new MemoryStream();
             var data = new byte[stream.Length];
-            _ = stream.Read(data, 0, data.Length);
-            return data;
+            int read;
+            while ((read = stream.Read(data, 0, data.Length)) != 0)
+                memoryStream.Write(data, 0, read);
+            return memoryStream.ToArray();
         }
 
         [UsedImplicitly]
