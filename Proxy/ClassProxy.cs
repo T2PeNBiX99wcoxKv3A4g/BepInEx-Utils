@@ -7,7 +7,7 @@ namespace BepInExUtils.Proxy;
 [UsedImplicitly]
 public abstract class ClassProxy
 {
-    private readonly object? _internalInstance;
+    private readonly object? _internalNativeInstance;
 
     [UsedImplicitly] protected readonly Type Type;
 
@@ -20,7 +20,7 @@ public abstract class ClassProxy
             throw new TypeAccessException($"Type {className} not found.");
         if (Type.BaseType == GetType())
             throw new TypeAccessException($"Type {className} is subclass of {GetType().Name}.");
-        _internalInstance = instance ?? throw new NullReferenceException("instance is null");
+        _internalNativeInstance = instance ?? throw new NullReferenceException("instance is null");
     }
 
     protected ClassProxy(string className)
@@ -34,8 +34,8 @@ public abstract class ClassProxy
             throw new TypeAccessException($"Type {className} is subclass of {GetType().Name}.");
         if (Type.IsAbstract)
             throw new TypeAccessException($"Type {className} is abstract class.");
-        _internalInstance = Activator.CreateInstance(Type) ??
-                            throw new NullReferenceException("Could not create instance");
+        _internalNativeInstance = Activator.CreateInstance(Type) ??
+                                  throw new NullReferenceException("Could not create instance");
     }
 
     protected ClassProxy(string className, params object[] args)
@@ -49,8 +49,8 @@ public abstract class ClassProxy
             throw new TypeAccessException($"Type {className} is subclass of {GetType().Name}.");
         if (Type.IsAbstract)
             throw new TypeAccessException($"Type {className} is abstract class.");
-        _internalInstance = Activator.CreateInstance(Type, args) ??
-                            throw new NullReferenceException("Could not create instance");
+        _internalNativeInstance = Activator.CreateInstance(Type, args) ??
+                                  throw new NullReferenceException("Could not create instance");
     }
 
     protected ClassProxy(string className, object[] args, object[] activationAttributes)
@@ -64,12 +64,16 @@ public abstract class ClassProxy
             throw new TypeAccessException($"Type {className} is subclass of {GetType().Name}.");
         if (Type.IsAbstract)
             throw new TypeAccessException($"Type {className} is abstract class.");
-        _internalInstance = Activator.CreateInstance(Type, args, activationAttributes) ??
-                            throw new NullReferenceException("Could not create instance");
+        _internalNativeInstance = Activator.CreateInstance(Type, args, activationAttributes) ??
+                                  throw new NullReferenceException("Could not create instance");
     }
 
+    [Obsolete("Use Native instead.")]
     [UsedImplicitly]
-    protected object Instance => _internalInstance ?? throw new NullReferenceException("instance is null");
+    protected object Instance => _internalNativeInstance ?? throw new NullReferenceException("instance is null");
+
+    [UsedImplicitly]
+    public object Native => _internalNativeInstance ?? throw new NullReferenceException("instance is null");
 
     [Obsolete("Use object.MethodInvoke instead.")]
     [UsedImplicitly]
