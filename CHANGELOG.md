@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.7.3](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.2..v0.7.3) - 2025-10-14
+
+### 🐛 Bug Fixes
+
+- *(Extensions)* Improve `GetEmbeddedResourceBytes` to handle large streams efficiently - ([d359b54](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/d359b5456c7e0d3a097ce8b0852ba58f0e992a64))
+
+### 🚜 Refactor
+
+- *(ClassProxy)* Rename `_internalInstance` to `_internalNativeInstance` and add `Native` property - ([6b31ff5](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/6b31ff52100ba0dae11e148a07e3bd5277db5c3d))
+
+### Action
+
+- Update `CHANGELOG.md` - ([1b7698c](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/1b7698ccb808a49d367302bab6d2b8058a7d8ea1))
+
+
 ## [0.7.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.1..v0.7.2) - 2025-10-12
 
 ### ⚙️ Miscellaneous Tasks
