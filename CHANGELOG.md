@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.9.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.9.0..v0.9.1) - 2025-10-15
+
+### 🐛 Bug Fixes
+
+- *(Interfaces)* Mark `BepInUtilsUnityPlugin` as obsolete with guidance to use `IBepInUtils` instead - ([69f387c](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/69f387cd2936489a1bf35492e5000f9f7951f6f9))
+
+### Action
+
+- Update `CHANGELOG.md` - ([4b179c8](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/4b179c8f8080b4732c8d6013d0056cf2e350b3b6))
+
+
 ## [0.9.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.8.2..v0.9.0) - 2025-10-15
 
 ### ⛰️  Features
