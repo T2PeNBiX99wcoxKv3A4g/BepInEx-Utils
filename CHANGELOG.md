@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.7](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.6..v0.7.7) - 2025-10-15
+
+### ⚙️ Miscellaneous Tasks
+
+- *(ci)* Add Nexus Mods publishing workflow and update packaging rules - ([edda042](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/edda0421eae5a0fbbe3ad5c62cfd2ab3ed5a8379))
+
+### Action
+
+- Update `CHANGELOG.md` - ([cad83f7](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/cad83f78fc7e00993958e015eaa788bcdef9dfe8))
+
+
 ## [0.7.6](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.5..v0.7.6) - 2025-10-15
 
 ### 🚜 Refactor
