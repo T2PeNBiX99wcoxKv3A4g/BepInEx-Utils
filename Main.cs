@@ -8,7 +8,7 @@ public partial class Main
 {
     private const string Version = "0.9.1";
 
-    protected override void PostAwake()
+    public void Init()
     {
         CommandManager.Init();
     }
