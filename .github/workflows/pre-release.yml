@@ -55,7 +55,7 @@ jobs:
 
       - name: Write version to `.version`
         id: change_version
-        run: python .scripts/change_version.py create-version-file ${{ steps.tag_version.outputs.new_tag }}
+        run: python .scripts/change_version.py change-version ./Main.cs Version ${{ steps.tag_version.outputs.new_tag }}
 
       - name: Echo version
         run: echo ${{ steps.change_version.outputs.new_version }}
