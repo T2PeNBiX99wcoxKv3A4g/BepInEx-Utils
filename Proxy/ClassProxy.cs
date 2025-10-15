@@ -1,4 +1,3 @@
-using BepInExUtils.Extensions;
 using HarmonyLib;
 using JetBrains.Annotations;
 
@@ -74,14 +73,4 @@ public abstract class ClassProxy
 
     [UsedImplicitly]
     public object Native => _internalNativeInstance ?? throw new NullReferenceException("instance is null");
-
-    [Obsolete("Use object.MethodInvoke instead.")]
-    [UsedImplicitly]
-    protected T? MethodAccess<T>(string methodName, params object?[] parameters) =>
-        Instance.MethodInvoke<T>(methodName, parameters);
-
-    [Obsolete("Use object.MethodInvoke instead.")]
-    [UsedImplicitly]
-    protected void MethodAccess(string methodName, params object?[] parameters) =>
-        Instance.MethodInvoke(methodName, parameters);
 }
