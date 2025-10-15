@@ -6,7 +6,6 @@ namespace BepInExUtils.Proxy;
 [PublicAPI]
 public abstract class ClassProxy
 {
-    protected readonly string ClassName;
     protected readonly Type Type;
 
     protected ClassProxy(object? instance, string className)
@@ -21,7 +20,6 @@ public abstract class ClassProxy
         var instanceType = instance?.GetType();
         if (instanceType != Type)
             throw new TypeAccessException($"instance {instanceType?.FullName} is not match {Type.FullName}.");
-        ClassName = className;
         Native = instance ?? throw new NullReferenceException("instance is null");
     }
 
@@ -36,7 +34,6 @@ public abstract class ClassProxy
             throw new TypeAccessException($"Type {className} is subclass of {GetType().Name}.");
         if (Type.IsAbstract)
             throw new TypeAccessException($"Type {className} is abstract class.");
-        ClassName = className;
         Native = Activator.CreateInstance(Type) ??
                  throw new NullReferenceException("Could not create instance");
     }
@@ -52,7 +49,6 @@ public abstract class ClassProxy
             throw new TypeAccessException($"Type {className} is subclass of {GetType().Name}.");
         if (Type.IsAbstract)
             throw new TypeAccessException($"Type {className} is abstract class.");
-        ClassName = className;
         Native = Activator.CreateInstance(Type, args) ??
                  throw new NullReferenceException("Could not create instance");
     }
@@ -68,7 +64,6 @@ public abstract class ClassProxy
             throw new TypeAccessException($"Type {className} is subclass of {GetType().Name}.");
         if (Type.IsAbstract)
             throw new TypeAccessException($"Type {className} is abstract class.");
-        ClassName = className;
         Native = Activator.CreateInstance(Type, args, activationAttributes) ??
                  throw new NullReferenceException("Could not create instance");
     }
