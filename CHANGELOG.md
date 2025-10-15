@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.10](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.9..v0.7.10) - 2025-10-15
+
+### ⚙️ Miscellaneous Tasks
+
+- *(ci)* Remove Nexus Mods publishing workflow - ([b84bf9f](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/b84bf9f618953f85c2fdafa11086654e98c0dcf7))
+
+### Action
+
+- Update `CHANGELOG.md` - ([b87024b](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/b87024b0067ef884bfaacf567257b3ecb74f30b7))
+
+
 ## [0.7.9](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.8..v0.7.9) - 2025-10-15
 
 ### ⚙️ Miscellaneous Tasks
