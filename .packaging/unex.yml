@@ -1,0 +1,7 @@
+# noinspection SpellCheckingInspection
+Game: hollowknightsilksong
+SetMainVortexFile: true
+ModId: 414 # Upload still needs to manually set value
+FileName: BepInExUtils
+FileDescription: |-
+  [url=https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/blob/master/CHANGELOG.md]CHANGELOG[/url]
