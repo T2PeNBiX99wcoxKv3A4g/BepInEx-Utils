@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Analyzer Include="Lib\BepInExUtils.Generator.dll"/>
         <Reference Include="0Harmony">
             <HintPath>Lib\0Harmony.dll</HintPath>
         </Reference>
@@ -44,7 +45,7 @@
         <Content Include=".github\workflows\pre-release.yml"/>
         <Content Include=".github\workflows\release.yml"/>
         <Content Include=".packaging\thunderstore.toml"/>
-        <Content Include=".packaging\unex.yml" />
+        <Content Include=".packaging\unex.yml"/>
     </ItemGroup>
 
 </Project>
