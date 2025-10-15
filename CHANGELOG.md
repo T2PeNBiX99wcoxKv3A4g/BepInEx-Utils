@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.8.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.10..v0.8.0) - 2025-10-15
+
+### ⛰️  Features
+
+- *(CommandManager)* Introduce command management system with default commands - ([cd3a13c](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/cd3a13c4bae2441bd944d0cbe58ece8f5d3e380d))
+
+### 🐛 Bug Fixes
+
+- *(Main)* Change name, load `CommandManager` when awake - ([67568e0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/67568e0ecd7371d3207187f137669d4c1ce0f359))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(ci)* Update versioning script in workflows - ([655f446](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/655f446581fe801f33c471d37505049d551cd2c0))
+
+### Action
+
+- Update `CHANGELOG.md` - ([50b07e2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/50b07e2c12fa27ccfc0c4416d487e550554d418b))
+
+
 ## [0.7.10](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.9..v0.7.10) - 2025-10-15
 
 ### ⚙️ Miscellaneous Tasks
