@@ -9,7 +9,7 @@ public static class ObjectExtensions
     extension(object obj)
     {
         [PublicAPI]
-        public T? MethodInvoke<T>(string methodName, params object?[] parameters)
+        public T MethodInvoke<T>(string methodName, params object?[] parameters)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -27,11 +27,13 @@ public static class ObjectExtensions
             if (method.GetParameters().Length != parameters.Length)
                 throw new TargetParameterCountException($"Method {methodName} parameters count not match.");
             var result = method.Invoke(method.IsStatic ? null : obj, parameters);
-            return result is T a ? a : default;
+            return result is T a
+                ? a
+                : throw new InvalidCastException($"Method {methodName} return type not match {typeof(T).Name}.");
         }
 
         [PublicAPI]
-        public object? GenericMethodInvoke<T>(string methodName, params object?[] parameters)
+        public object GenericMethodInvoke<T>(string methodName, params object?[] parameters)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -53,7 +55,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvoke<T, T2>(string methodName, params object?[] parameters)
+        public object GenericMethodInvoke<T, T2>(string methodName, params object?[] parameters)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -75,7 +77,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvoke<T, T2, T3>(string methodName, params object?[] parameters)
+        public object GenericMethodInvoke<T, T2, T3>(string methodName, params object?[] parameters)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -97,7 +99,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvoke<T, T2, T3, T4>(string methodName, params object?[] parameters)
+        public object GenericMethodInvoke<T, T2, T3, T4>(string methodName, params object?[] parameters)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -119,7 +121,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvoke<T, T2, T3, T4, T5>(string methodName, params object?[] parameters)
+        public object GenericMethodInvoke<T, T2, T3, T4, T5>(string methodName, params object?[] parameters)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -141,7 +143,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6>(string methodName, params object?[] parameters)
+        public object GenericMethodInvoke<T, T2, T3, T4, T5, T6>(string methodName, params object?[] parameters)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -163,7 +165,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7>(string methodName, params object?[] parameters)
+        public object GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7>(string methodName, params object?[] parameters)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -186,8 +188,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7, T8>(string methodName,
-            params object?[] parameters)
+        public object GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7, T8>(string methodName, params object?[] parameters)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -210,7 +211,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7, T8, T9>(string methodName,
+        public object GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7, T8, T9>(string methodName,
             params object?[] parameters)
         {
             if (obj == null)
@@ -234,7 +235,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7, T8, T9, T10>(string methodName,
+        public object GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7, T8, T9, T10>(string methodName,
             params object?[] parameters)
         {
             if (obj == null)
@@ -279,7 +280,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public T? GetFieldValue<T>(string fieldName)
+        public T GetFieldValue<T>(string fieldName)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -289,7 +290,9 @@ public static class ObjectExtensions
             if (field == null)
                 throw new FieldAccessException($"Field {fieldName} not found.");
             var result = field.GetValue(field.IsStatic ? null : obj);
-            return result is T a ? a : default;
+            return result is T a
+                ? a
+                : throw new InvalidCastException($"Field {fieldName} return type not match {typeof(T).Name}.");
         }
 
         [PublicAPI]
@@ -306,7 +309,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public T? GetPropertyValue<T>(string propertyName)
+        public T GetPropertyValue<T>(string propertyName)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -319,7 +322,9 @@ public static class ObjectExtensions
             if (getProperty == null)
                 throw new MethodAccessException($"Property {propertyName} don't have any getter.");
             var result = property.GetValue(getProperty.IsStatic ? null : obj);
-            return result is T a ? a : default;
+            return result is T a
+                ? a
+                : throw new InvalidCastException($"Property {propertyName} return type not match {typeof(T).Name}.");
         }
 
         [PublicAPI]

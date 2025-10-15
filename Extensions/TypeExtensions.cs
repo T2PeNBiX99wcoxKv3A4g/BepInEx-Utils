@@ -9,7 +9,7 @@ public static class TypeExtensions
     extension(Type type)
     {
         [PublicAPI]
-        public T? MethodInvokeInType<T>(string methodName, params object?[] parameters)
+        public T MethodInvokeInType<T>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
@@ -25,11 +25,13 @@ public static class TypeExtensions
             if (method.GetParameters().Length != parameters.Length)
                 throw new TargetParameterCountException($"Method {methodName} parameters count not match.");
             var result = method.Invoke(null, parameters);
-            return result is T a ? a : default;
+            return result is T a
+                ? a
+                : throw new InvalidCastException($"Method {methodName} return type not match {typeof(T).Name}.");
         }
 
         [PublicAPI]
-        public object? GenericMethodInvokeInType<T>(string methodName, params object?[] parameters)
+        public object GenericMethodInvokeInType<T>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
@@ -49,7 +51,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvokeInType<T, T2>(string methodName, params object?[] parameters)
+        public object GenericMethodInvokeInType<T, T2>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
@@ -69,7 +71,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvokeInType<T, T2, T3>(string methodName, params object?[] parameters)
+        public object GenericMethodInvokeInType<T, T2, T3>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
@@ -89,7 +91,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvokeInType<T, T2, T3, T4>(string methodName, params object?[] parameters)
+        public object GenericMethodInvokeInType<T, T2, T3, T4>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
@@ -109,7 +111,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvokeInType<T, T2, T3, T4, T5>(string methodName, params object?[] parameters)
+        public object GenericMethodInvokeInType<T, T2, T3, T4, T5>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
@@ -129,7 +131,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvokeInType<T, T2, T3, T4, T5, T6>(string methodName, params object?[] parameters)
+        public object GenericMethodInvokeInType<T, T2, T3, T4, T5, T6>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
@@ -149,8 +151,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvokeInType<T, T2, T3, T4, T5, T6, T7>(string methodName,
-            params object?[] parameters)
+        public object GenericMethodInvokeInType<T, T2, T3, T4, T5, T6, T7>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
@@ -171,7 +172,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvokeInType<T, T2, T3, T4, T5, T6, T7, T8>(string methodName,
+        public object GenericMethodInvokeInType<T, T2, T3, T4, T5, T6, T7, T8>(string methodName,
             params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
@@ -193,7 +194,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvokeInType<T, T2, T3, T4, T5, T6, T7, T8, T9>(string methodName,
+        public object GenericMethodInvokeInType<T, T2, T3, T4, T5, T6, T7, T8, T9>(string methodName,
             params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
@@ -215,7 +216,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public object? GenericMethodInvokeInType<T, T2, T3, T4, T5, T6, T7, T8, T9, T10>(string methodName,
+        public object GenericMethodInvokeInType<T, T2, T3, T4, T5, T6, T7, T8, T9, T10>(string methodName,
             params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
@@ -256,7 +257,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public T? GetFieldValueInType<T>(string fieldName)
+        public T GetFieldValueInType<T>(string fieldName)
         {
             if (string.IsNullOrWhiteSpace(fieldName))
                 throw new ArgumentNullException(nameof(fieldName));
@@ -264,7 +265,9 @@ public static class TypeExtensions
             if (field == null)
                 throw new FieldAccessException($"Field {fieldName} not found.");
             var result = field.GetValue(null);
-            return result is T a ? a : default;
+            return result is T a
+                ? a
+                : throw new InvalidCastException($"Field {fieldName} return type not match {typeof(T).Name}.");
         }
 
         [PublicAPI]
@@ -279,7 +282,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public T? GetPropertyValueInType<T>(string propertyName)
+        public T GetPropertyValueInType<T>(string propertyName)
         {
             if (string.IsNullOrWhiteSpace(propertyName))
                 throw new ArgumentNullException(nameof(propertyName));
@@ -290,7 +293,9 @@ public static class TypeExtensions
             if (getProperty == null)
                 throw new MethodAccessException($"Property {propertyName} don't have any getter.");
             var result = property.GetValue(null);
-            return result is T a ? a : default;
+            return result is T a
+                ? a
+                : throw new InvalidCastException($"Property {propertyName} return type not match {typeof(T).Name}.");
         }
 
         [PublicAPI]
