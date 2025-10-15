@@ -6,10 +6,11 @@ namespace BepInExUtils.Extensions;
 
 public static class TypeExtensions
 {
+    // T? != T
     extension(Type type)
     {
         [PublicAPI]
-        public T MethodInvokeInType<T>(string methodName, params object?[] parameters)
+        public T? MethodInvokeInType<T>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
                 throw new ArgumentNullException(nameof(methodName));
@@ -25,9 +26,7 @@ public static class TypeExtensions
             if (method.GetParameters().Length != parameters.Length)
                 throw new TargetParameterCountException($"Method {methodName} parameters count not match.");
             var result = method.Invoke(null, parameters);
-            return result is T a
-                ? a
-                : throw new InvalidCastException($"Method {methodName} return type not match {typeof(T).Name}.");
+            return result is T a ? a : default;
         }
 
         [PublicAPI]
@@ -257,7 +256,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public T GetFieldValueInType<T>(string fieldName)
+        public T? GetFieldValueInType<T>(string fieldName)
         {
             if (string.IsNullOrWhiteSpace(fieldName))
                 throw new ArgumentNullException(nameof(fieldName));
@@ -265,9 +264,7 @@ public static class TypeExtensions
             if (field == null)
                 throw new FieldAccessException($"Field {fieldName} not found.");
             var result = field.GetValue(null);
-            return result is T a
-                ? a
-                : throw new InvalidCastException($"Field {fieldName} return type not match {typeof(T).Name}.");
+            return result is T a ? a : default;
         }
 
         [PublicAPI]
@@ -282,7 +279,7 @@ public static class TypeExtensions
         }
 
         [PublicAPI]
-        public T GetPropertyValueInType<T>(string propertyName)
+        public T? GetPropertyValueInType<T>(string propertyName)
         {
             if (string.IsNullOrWhiteSpace(propertyName))
                 throw new ArgumentNullException(nameof(propertyName));
@@ -293,9 +290,7 @@ public static class TypeExtensions
             if (getProperty == null)
                 throw new MethodAccessException($"Property {propertyName} don't have any getter.");
             var result = property.GetValue(null);
-            return result is T a
-                ? a
-                : throw new InvalidCastException($"Property {propertyName} return type not match {typeof(T).Name}.");
+            return result is T a ? a : default;
         }
 
         [PublicAPI]

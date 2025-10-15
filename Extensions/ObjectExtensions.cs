@@ -6,10 +6,11 @@ namespace BepInExUtils.Extensions;
 
 public static class ObjectExtensions
 {
+    // T? != T
     extension(object obj)
     {
         [PublicAPI]
-        public T MethodInvoke<T>(string methodName, params object?[] parameters)
+        public T? MethodInvoke<T>(string methodName, params object?[] parameters)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -27,9 +28,7 @@ public static class ObjectExtensions
             if (method.GetParameters().Length != parameters.Length)
                 throw new TargetParameterCountException($"Method {methodName} parameters count not match.");
             var result = method.Invoke(method.IsStatic ? null : obj, parameters);
-            return result is T a
-                ? a
-                : throw new InvalidCastException($"Method {methodName} return type not match {typeof(T).Name}.");
+            return result is T a ? a : default;
         }
 
         [PublicAPI]
@@ -280,7 +279,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public T GetFieldValue<T>(string fieldName)
+        public T? GetFieldValue<T>(string fieldName)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -290,9 +289,7 @@ public static class ObjectExtensions
             if (field == null)
                 throw new FieldAccessException($"Field {fieldName} not found.");
             var result = field.GetValue(field.IsStatic ? null : obj);
-            return result is T a
-                ? a
-                : throw new InvalidCastException($"Field {fieldName} return type not match {typeof(T).Name}.");
+            return result is T a ? a : default;
         }
 
         [PublicAPI]
@@ -309,7 +306,7 @@ public static class ObjectExtensions
         }
 
         [PublicAPI]
-        public T GetPropertyValue<T>(string propertyName)
+        public T? GetPropertyValue<T>(string propertyName)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -322,9 +319,7 @@ public static class ObjectExtensions
             if (getProperty == null)
                 throw new MethodAccessException($"Property {propertyName} don't have any getter.");
             var result = property.GetValue(getProperty.IsStatic ? null : obj);
-            return result is T a
-                ? a
-                : throw new InvalidCastException($"Property {propertyName} return type not match {typeof(T).Name}.");
+            return result is T a ? a : default;
         }
 
         [PublicAPI]
