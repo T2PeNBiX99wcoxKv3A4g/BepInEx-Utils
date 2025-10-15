@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.8.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.8.1..v0.8.2) - 2025-10-15
+
+### 🐛 Bug Fixes
+
+- *(Extensions)* Remove the return type check - ([7a9bf7c](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/7a9bf7c3afb46d7e77e8e797f1231532ff7d997e))
+
+### Action
+
+- Update `CHANGELOG.md` - ([b739012](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/b739012b458ac1352ebe4db312e4a34fced99c2e))
+
+
 ## [0.8.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.8.0..v0.8.1) - 2025-10-15
 
 ### ⚙️ Miscellaneous Tasks
