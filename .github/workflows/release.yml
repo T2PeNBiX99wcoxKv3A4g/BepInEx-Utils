@@ -239,4 +239,4 @@ jobs:
       - name: Upload Package
         run: |
           cd .packaging
-          unex upload 414 ./.packaging/Package.zip -k ${{ secrets.NEXUSMODS_API }} -v ${{ needs.windows-release-build.outputs.new_version }}
+          unex upload 414 ./dist/Package.zip -k ${{ secrets.NEXUSMODS_API }} -v ${{ needs.windows-release-build.outputs.new_version }}
