@@ -69,7 +69,7 @@ public abstract class ClassProxy
 
     [Obsolete("Use Native instead.")]
     [UsedImplicitly]
-    protected object Instance => _internalNativeInstance ?? throw new NullReferenceException("instance is null");
+    protected object Instance => Native;
 
     [UsedImplicitly]
     public object Native => _internalNativeInstance ?? throw new NullReferenceException("instance is null");
