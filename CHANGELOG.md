@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.8.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.8.0..v0.8.1) - 2025-10-15
+
+### ⚙️ Miscellaneous Tasks
+
+- *(Main)* Fix version - ([61e809f](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/61e809fb41016421f3a12fe28f2f15604c633006))
+
+### Action
+
+- Update `CHANGELOG.md` - ([b4ba93e](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/b4ba93ee1a645762cb45fc0a5009d6e9f3918334))
+
+
 ## [0.8.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.10..v0.8.0) - 2025-10-15
 
 ### ⛰️  Features
