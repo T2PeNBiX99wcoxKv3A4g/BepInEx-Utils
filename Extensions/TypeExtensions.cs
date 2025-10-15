@@ -8,7 +8,7 @@ public static class TypeExtensions
 {
     extension(Type type)
     {
-        [UsedImplicitly]
+        [PublicAPI]
         public T? MethodInvokeInType<T>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
@@ -28,7 +28,7 @@ public static class TypeExtensions
             return result is T a ? a : default;
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvokeInType<T>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
@@ -48,7 +48,7 @@ public static class TypeExtensions
                 : method.Invoke(null, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvokeInType<T, T2>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
@@ -68,7 +68,7 @@ public static class TypeExtensions
                 : method.Invoke(null, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvokeInType<T, T2, T3>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
@@ -88,7 +88,7 @@ public static class TypeExtensions
                 : method.Invoke(null, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvokeInType<T, T2, T3, T4>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
@@ -108,7 +108,7 @@ public static class TypeExtensions
                 : method.Invoke(null, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvokeInType<T, T2, T3, T4, T5>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
@@ -128,7 +128,7 @@ public static class TypeExtensions
                 : method.Invoke(null, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvokeInType<T, T2, T3, T4, T5, T6>(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
@@ -148,7 +148,7 @@ public static class TypeExtensions
                 : method.Invoke(null, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvokeInType<T, T2, T3, T4, T5, T6, T7>(string methodName,
             params object?[] parameters)
         {
@@ -170,7 +170,7 @@ public static class TypeExtensions
                 : method.Invoke(null, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvokeInType<T, T2, T3, T4, T5, T6, T7, T8>(string methodName,
             params object?[] parameters)
         {
@@ -192,7 +192,7 @@ public static class TypeExtensions
                 : method.Invoke(null, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvokeInType<T, T2, T3, T4, T5, T6, T7, T8, T9>(string methodName,
             params object?[] parameters)
         {
@@ -214,7 +214,7 @@ public static class TypeExtensions
                 : method.Invoke(null, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvokeInType<T, T2, T3, T4, T5, T6, T7, T8, T9, T10>(string methodName,
             params object?[] parameters)
         {
@@ -236,7 +236,7 @@ public static class TypeExtensions
                 : method.Invoke(null, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public void MethodInvokeInType(string methodName, params object?[] parameters)
         {
             if (string.IsNullOrWhiteSpace(methodName))
@@ -255,7 +255,7 @@ public static class TypeExtensions
             method.Invoke(null, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public T? GetFieldValueInType<T>(string fieldName)
         {
             if (string.IsNullOrWhiteSpace(fieldName))
@@ -267,7 +267,7 @@ public static class TypeExtensions
             return result is T a ? a : default;
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public void SetFieldValueInType<T>(string fieldName, T value)
         {
             if (string.IsNullOrWhiteSpace(fieldName))
@@ -278,7 +278,7 @@ public static class TypeExtensions
             field.SetValue(null, value);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public T? GetPropertyValueInType<T>(string propertyName)
         {
             if (string.IsNullOrWhiteSpace(propertyName))
@@ -293,7 +293,7 @@ public static class TypeExtensions
             return result is T a ? a : default;
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public void SetPropertyValueInType<T>(string propertyName, T value)
         {
             if (string.IsNullOrWhiteSpace(propertyName))

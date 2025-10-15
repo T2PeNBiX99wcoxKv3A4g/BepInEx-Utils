@@ -6,7 +6,7 @@ public static class ListExtensions
 {
     extension<T>(IList<T> list)
     {
-        [UsedImplicitly]
+        [PublicAPI]
         public bool TryGetValue(int index, out T? value)
         {
             if (index < 0 || index >= list.Count)
@@ -19,10 +19,10 @@ public static class ListExtensions
             return true;
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public T? GetValueOrDefault(int index) => list.TryGetValue(index, out var value) ? value : default;
 
-        [UsedImplicitly]
+        [PublicAPI]
         public bool TrySetValue(int index, T value)
         {
             if (index < 0 || index >= list.Count) return false;
@@ -33,7 +33,7 @@ public static class ListExtensions
 
     extension<T>(T[] array)
     {
-        [UsedImplicitly]
+        [PublicAPI]
         public bool TryGetValue(int index, out T? value)
         {
             if (index < 0 || index >= array.Length)
@@ -46,10 +46,10 @@ public static class ListExtensions
             return true;
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public T? GetValueOrDefault(int index) => array.TryGetValue(index, out var value) ? value : default;
 
-        [UsedImplicitly]
+        [PublicAPI]
         public bool TrySetValue(int index, T value)
         {
             if (index < 0 || index >= array.Length) return false;

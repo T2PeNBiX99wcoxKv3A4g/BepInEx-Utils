@@ -3,8 +3,8 @@ using JetBrains.Annotations;
 
 namespace BepInExUtils.Interfaces;
 
+[PublicAPI]
 public abstract class BepInUtilsUnityPlugin : BaseUnityPlugin
 {
-    [UsedImplicitly]
     protected abstract void PostAwake();
 }

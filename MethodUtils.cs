@@ -3,6 +3,7 @@ using JetBrains.Annotations;
 
 namespace BepInExUtils;
 
+[PublicAPI]
 public static class MethodUtils
 {
     private const string UnknownName = "Unknown";
@@ -20,7 +21,6 @@ public static class MethodUtils
         }
     }
 
-    [UsedImplicitly]
     public static string MethodName
     {
         get

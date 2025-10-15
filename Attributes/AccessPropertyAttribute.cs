@@ -3,8 +3,8 @@ using JetBrains.Annotations;
 namespace BepInExUtils.Attributes;
 
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
-[UsedImplicitly]
+[PublicAPI]
 public class AccessPropertyAttribute<T>(string propertyName) : Attribute
 {
-    [UsedImplicitly] public string PropertyName { get; protected set; } = propertyName;
+    public string PropertyName { get; protected set; } = propertyName;
 }

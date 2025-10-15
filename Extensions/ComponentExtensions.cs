@@ -7,7 +7,7 @@ public static class ComponentExtensions
 {
     extension(Component obj)
     {
-        [UsedImplicitly]
+        [PublicAPI]
         public string? FullName() => !obj ? null : obj.gameObject.FullName();
     }
 }

@@ -8,7 +8,7 @@ public static class ObjectExtensions
 {
     extension(object obj)
     {
-        [UsedImplicitly]
+        [PublicAPI]
         public T? MethodInvoke<T>(string methodName, params object?[] parameters)
         {
             if (obj == null)
@@ -30,7 +30,7 @@ public static class ObjectExtensions
             return result is T a ? a : default;
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvoke<T>(string methodName, params object?[] parameters)
         {
             if (obj == null)
@@ -52,7 +52,7 @@ public static class ObjectExtensions
                 : method.Invoke(method.IsStatic ? null : obj, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvoke<T, T2>(string methodName, params object?[] parameters)
         {
             if (obj == null)
@@ -74,7 +74,7 @@ public static class ObjectExtensions
                 : method.Invoke(method.IsStatic ? null : obj, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvoke<T, T2, T3>(string methodName, params object?[] parameters)
         {
             if (obj == null)
@@ -96,7 +96,7 @@ public static class ObjectExtensions
                 : method.Invoke(method.IsStatic ? null : obj, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvoke<T, T2, T3, T4>(string methodName, params object?[] parameters)
         {
             if (obj == null)
@@ -118,7 +118,7 @@ public static class ObjectExtensions
                 : method.Invoke(method.IsStatic ? null : obj, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvoke<T, T2, T3, T4, T5>(string methodName, params object?[] parameters)
         {
             if (obj == null)
@@ -140,7 +140,7 @@ public static class ObjectExtensions
                 : method.Invoke(method.IsStatic ? null : obj, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6>(string methodName, params object?[] parameters)
         {
             if (obj == null)
@@ -162,7 +162,7 @@ public static class ObjectExtensions
                 : method.Invoke(method.IsStatic ? null : obj, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7>(string methodName, params object?[] parameters)
         {
             if (obj == null)
@@ -185,7 +185,7 @@ public static class ObjectExtensions
                 : method.Invoke(method.IsStatic ? null : obj, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7, T8>(string methodName,
             params object?[] parameters)
         {
@@ -209,7 +209,7 @@ public static class ObjectExtensions
                 : method.Invoke(method.IsStatic ? null : obj, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7, T8, T9>(string methodName,
             params object?[] parameters)
         {
@@ -233,7 +233,7 @@ public static class ObjectExtensions
                 : method.Invoke(method.IsStatic ? null : obj, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public object? GenericMethodInvoke<T, T2, T3, T4, T5, T6, T7, T8, T9, T10>(string methodName,
             params object?[] parameters)
         {
@@ -257,7 +257,7 @@ public static class ObjectExtensions
                 : method.Invoke(method.IsStatic ? null : obj, parameters);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public void MethodInvoke(string methodName, params object?[] parameters)
         {
             if (obj == null)
@@ -278,17 +278,7 @@ public static class ObjectExtensions
             method.Invoke(method.IsStatic ? null : obj, parameters);
         }
 
-        [Obsolete("Use object.MethodInvoke instead.")]
-        [UsedImplicitly]
-        public void MethodAccess(string methodName, params object?[] parameters) =>
-            obj.MethodInvoke(methodName, parameters);
-
-        [Obsolete("Use object.MethodInvoke instead.")]
-        [UsedImplicitly]
-        public T? MethodAccess<T>(string methodName, params object?[] parameters) =>
-            obj.MethodInvoke<T>(methodName, parameters);
-
-        [UsedImplicitly]
+        [PublicAPI]
         public T? GetFieldValue<T>(string fieldName)
         {
             if (obj == null)
@@ -302,7 +292,7 @@ public static class ObjectExtensions
             return result is T a ? a : default;
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public void SetFieldValue<T>(string fieldName, T value)
         {
             if (obj == null)
@@ -315,7 +305,7 @@ public static class ObjectExtensions
             field.SetValue(field.IsStatic ? null : obj, value);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public T? GetPropertyValue<T>(string propertyName)
         {
             if (obj == null)
@@ -332,7 +322,7 @@ public static class ObjectExtensions
             return result is T a ? a : default;
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public void SetPropertyValue<T>(string propertyName, T value)
         {
             if (obj == null)

@@ -7,7 +7,7 @@ public static class MonoBehaviourExtensions
 {
     extension(MonoBehaviour behaviour)
     {
-        [UsedImplicitly]
+        [PublicAPI]
         public string? FullName() => !behaviour ? null : behaviour.transform.FullName();
     }
 }

@@ -7,26 +7,25 @@ public static class ConfigEntryExtensions
 {
     extension<T>(ConfigEntry<T>? configEntry)
     {
-        [UsedImplicitly]
+        [PublicAPI]
         public ConfigEntryEx<T> TryGetValue(T defaultValue = default!) => new(configEntry, defaultValue);
 
-        [UsedImplicitly]
+        [PublicAPI]
         public ConfigEntryEx<T> Value() => TryGetValue(configEntry, (T?)configEntry?.DefaultValue ?? default!);
     }
 }
 
+[PublicAPI]
 public class ConfigEntryEx<T>(ConfigEntry<T>? configEntry, T defaultValue = default!)
 {
     private T Value => configEntry == null ? defaultValue : configEntry.Value;
 
-    [UsedImplicitly]
     public T V
     {
         get => Value;
         set => Set(value);
     }
 
-    [UsedImplicitly]
     public void Set(T value)
     {
         if (configEntry == null) return;

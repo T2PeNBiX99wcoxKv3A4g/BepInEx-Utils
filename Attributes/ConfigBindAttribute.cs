@@ -4,6 +4,7 @@ using JetBrains.Annotations;
 namespace BepInExUtils.Attributes;
 
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+[PublicAPI]
 public class ConfigBindAttribute<T> : Attribute where T : IComparable
 {
     public ConfigBindAttribute(string key, string section, T defaultValue, string description)
@@ -22,8 +23,8 @@ public class ConfigBindAttribute<T> : Attribute where T : IComparable
         ConfigDescription = new(description, new AcceptableValueRange<T>(minValue, maxValue));
     }
 
-    [UsedImplicitly] public string Key { get; protected set; }
-    [UsedImplicitly] public ConfigDefinition ConfigDefinition { get; protected set; }
-    [UsedImplicitly] public T DefaultValue { get; protected set; }
-    [UsedImplicitly] public ConfigDescription? ConfigDescription { get; protected set; }
+    public string Key { get; protected set; }
+    public ConfigDefinition ConfigDefinition { get; protected set; }
+    public T DefaultValue { get; protected set; }
+    public ConfigDescription? ConfigDescription { get; protected set; }
 }

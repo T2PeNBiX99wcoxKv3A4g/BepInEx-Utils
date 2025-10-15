@@ -6,47 +6,47 @@ public static class StringExtensions
 {
     extension(string str)
     {
-        [UsedImplicitly]
+        [PublicAPI]
         public string? FirstPath(char value)
         {
             var findEnd = str.LastIndexOf(value);
             return findEnd < 0 ? null : str.Substring(0, findEnd);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public string? FirstPath(string value)
         {
             var findEnd = str.LastIndexOf(value, StringComparison.Ordinal);
             return findEnd < 0 ? null : str.Substring(0, findEnd - value.Length + 1);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public string? LastPath(char value)
         {
             var findStart = str.IndexOf(value);
             return findStart < 0 ? null : str.Substring(findStart + 1);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public string? LastPath(string value)
         {
             var findStart = str.IndexOf(value, StringComparison.Ordinal);
             return findStart < 0 ? null : str.Substring(findStart + value.Length);
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public string? MiddlePath(char first, char last) => str.FirstPath(last)?.LastPath(first);
 
-        [UsedImplicitly]
+        [PublicAPI]
         public string? MiddlePath(string first, string last) => str.FirstPath(last)?.LastPath(first);
 
-        [UsedImplicitly]
+        [PublicAPI]
         public string? MiddlePath(char first, string last) => str.FirstPath(last)?.LastPath(first);
 
-        [UsedImplicitly]
+        [PublicAPI]
         public string? MiddlePath(string first, char last) => str.FirstPath(last)?.LastPath(first);
 
-        [UsedImplicitly]
+        [PublicAPI]
         public bool TryGetValue(int index, out char? value)
         {
             if (index < 0 || index >= str.Length)
@@ -59,7 +59,7 @@ public static class StringExtensions
             return true;
         }
 
-        [UsedImplicitly]
+        [PublicAPI]
         public char? GetValueOrDefault(int index) => str.TryGetValue(index, out var value) ? value : null;
     }
 }

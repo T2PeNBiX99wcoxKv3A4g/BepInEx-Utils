@@ -1,10 +1,9 @@
 using BepInEx.Logging;
-
-// ReSharper disable UnusedMember.Global
-// ReSharper disable UnusedType.Global
+using JetBrains.Annotations;
 
 namespace BepInExUtils;
 
+[PublicAPI]
 public class Logger(string sourceName)
 {
     private ManualLogSource? _logger;

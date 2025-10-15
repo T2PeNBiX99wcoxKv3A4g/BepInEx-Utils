@@ -7,6 +7,7 @@ public static class TransformExtensions
 {
     extension(Transform transform)
     {
+        [PublicAPI]
         public string? FullName()
         {
             var tmpName = transform.name;
@@ -21,7 +22,7 @@ public static class TransformExtensions
         }
 
         // From https://discussions.unity.com/t/world-scale/374693
-        [UsedImplicitly]
+        [PublicAPI]
         public Vector3 GetWorldScale()
         {
             var worldScale = transform.localScale;
