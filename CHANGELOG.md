@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.9.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.9.1..v0.9.2) - 2025-10-15
+
+### 🚜 Refactor
+
+- *(Main)* Replace `PostAwake` with `Init` method for initialization - ([0be3aac](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/0be3aac06961f9e8465b7473078eb52694f6f7ea))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(BepInExUtils)* Update Generator DLL - ([8dbfc28](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/8dbfc287ae6355156440123ad8964f5b3bc8cf22))
+
+### Action
+
+- Update `CHANGELOG.md` - ([ff3c79b](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/ff3c79b77caee7e8225fdc01d31af2eca60d3bf1))
+
+
 ## [0.9.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.9.0..v0.9.1) - 2025-10-15
 
 ### 🐛 Bug Fixes
