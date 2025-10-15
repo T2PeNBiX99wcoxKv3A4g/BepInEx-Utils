@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.9.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.8.2..v0.9.0) - 2025-10-15
+
+### ⛰️  Features
+
+- *(Interfaces)* Add `IBepInUtils` interface with initialization method - ([fc9912d](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/fc9912d1bb443666ffa93b76d14a45953414ea4e))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(BepInExUtils)* Update Generator DLL - ([76a2d8b](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/76a2d8bcd3f6efd3c3a618cb6bc86c9de5f4ad66))
+
+### Action
+
+- Update `CHANGELOG.md` - ([d4e2f05](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/d4e2f053411ae41959d4b3841b0039fcf74b582a))
+
+
 ## [0.8.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.8.1..v0.8.2) - 2025-10-15
 
 ### 🐛 Bug Fixes
