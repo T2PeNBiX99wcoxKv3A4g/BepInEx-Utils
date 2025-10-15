@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.5](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.4..v0.7.5) - 2025-10-15
+
+### 🚜 Refactor
+
+- *(Extensions)* Replace nullable returns with non-nullable and throw exceptions on type mismatch - ([29d158c](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/29d158c2e9c7b38fe4ef72706528b978dfc17aee))
+
+### Action
+
+- Update `CHANGELOG.md` - ([eab6279](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/eab62799680ce75e2e0f874c96e2bea53356195e))
+
+
 ## [0.7.4](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.3..v0.7.4) - 2025-10-15
 
 ### 🚜 Refactor
