@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.8](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.7..v0.7.8) - 2025-10-15
+
+### ⚙️ Miscellaneous Tasks
+
+- *(ci)* Fix incorrect package path in Nexus Mods upload step - ([8ad5c66](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/8ad5c660387f5bc1315d523b24182e68b3cbc5aa))
+
+### Action
+
+- Update `CHANGELOG.md` - ([abb4380](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/abb4380066559f40222519fe3f53e6c659da04f6))
+
+
 ## [0.7.7](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.6..v0.7.7) - 2025-10-15
 
 ### ⚙️ Miscellaneous Tasks
