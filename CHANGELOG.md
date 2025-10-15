@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.7.4](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.3..v0.7.4) - 2025-10-15
+
+### 🚜 Refactor
+
+- *(ClassProxy)* Standardize exception argument naming and enhance class consistency - ([e8bc789](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/e8bc789ecd0f599a0b781efe5208a44be9e297f3))
+- *(ClassProxy)* Remove `_internalNativeInstance` and make `Native` property readonly - ([79d90ad](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/79d90adbe947b768114364db65e18a18db5ef91f))
+- *(ClassProxy)* Replace obsolete `Instance` with `Native` property - ([33b8ce6](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/33b8ce65a4c0dceda77c6c5e52fe534abd5be549))
+- *(ClassProxy)* Remove obsolete `MethodAccess` methods and unused import - ([0c13937](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/0c139372fdabbacb31c5c2958da063e94085f575))
+- Replace `[UsedImplicitly]` attributes with `[PublicAPI]` across the project - ([4d60851](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/4d6085179ff10d36e3057eae645540f508d6f4c7))
+
+### Action
+
+- Update `CHANGELOG.md` - ([997d5d4](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/997d5d45eacdf2e0284e60a03f64a32452bf60c5))
+
+
 ## [0.7.3](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.2..v0.7.3) - 2025-10-14
 
 ### 🐛 Bug Fixes
