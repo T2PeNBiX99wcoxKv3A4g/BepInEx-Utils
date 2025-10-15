@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.9](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.8..v0.7.9) - 2025-10-15
+
+### ⚙️ Miscellaneous Tasks
+
+- *(ci)* Update Nexus Mods upload step to use cookie-based authentication - ([53baf57](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/53baf57ff06b71bd348bd1f1eed806e169408b3d))
+
+### Action
+
+- Update `CHANGELOG.md` - ([374bc64](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/374bc64bd95f1bcd4a24d580c7b43963f06c1587))
+
+
 ## [0.7.8](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.7..v0.7.8) - 2025-10-15
 
 ### ⚙️ Miscellaneous Tasks
