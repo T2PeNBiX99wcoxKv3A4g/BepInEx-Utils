@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.6](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.5..v0.7.6) - 2025-10-15
+
+### 🚜 Refactor
+
+- *(ClassProxy)* Remove unused `ClassName` field for cleaner and consistent implementation - ([afd7305](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/afd73057c6c496d72ae1fd9f43cdd123f05b8d92))
+
+### Action
+
+- Update `CHANGELOG.md` - ([2d30398](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/2d30398204b8c08ed39930ce5197c269629f629a))
+
+
 ## [0.7.5](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.7.4..v0.7.5) - 2025-10-15
 
 ### 🚜 Refactor
