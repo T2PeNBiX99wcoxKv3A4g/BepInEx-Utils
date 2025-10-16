@@ -6,7 +6,6 @@ namespace BepInExUtils.Extensions;
 
 public static class TypeExtensions
 {
-    // T? != T
     extension(Type type)
     {
         [PublicAPI]

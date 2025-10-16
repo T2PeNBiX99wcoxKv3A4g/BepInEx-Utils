@@ -6,7 +6,6 @@ namespace BepInExUtils.Extensions;
 
 public static class ObjectExtensions
 {
-    // T? != T
     extension(object obj)
     {
         [PublicAPI]
