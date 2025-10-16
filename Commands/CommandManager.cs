@@ -31,12 +31,9 @@ public static class CommandManager
         }
     ];
 
-    public static event OnCommandManagerInitEvent? OnCommandManagerInit;
-
     internal static void Init()
     {
         DefaultCommands.ForEach(AddCommand);
-        OnCommandManagerInit?.Invoke();
         Utils.Logger.Debug("CommandManager init");
     }
 
