@@ -7,8 +7,6 @@ public static class CommandManager
 {
     public delegate void Command(string[] args);
 
-    public delegate void OnCommandManagerInitEvent();
-
     private static readonly Dictionary<string, CommandInfo> Infos = [];
 
     private static readonly List<CommandInfo> DefaultCommands =
