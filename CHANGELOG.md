@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.0.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.9.2..v1.0.0) - 2025-10-19
+
+### ⛰️  Features
+
+- *(CommandManager)* Make commands asynchronous by updating delegate and execution logic - ([a90bc48](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/a90bc4869fdfb74f5e2e4e76d0891378e1dd2ac1))
+
+### 🚜 Refactor
+
+- *(CommandManager)* Rename `TryExecuteCommand` to `ExecuteCommand` for clarity and consistency - ([9e8a06e](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/9e8a06e280954b539c0eaed18ce561024cb96343))
+- *(CommandManager)* Remove unused `OnCommandManagerInitEvent` delegate - ([996d5f1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/996d5f16acbe1d068d43d81e88713c914f1c9e1b))
+- *(CommandManager)* Simplify `CommandInfo` struct with record structure and streamline command initialization - ([f21a75a](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/f21a75a39105b62e6448ebdce149481f30125031))
+- *(CommandManager)* Remove unused `OnCommandManagerInit` event and adjust initialization logic - ([2988d38](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/2988d38602d13afdf6338c6fc803ecfac5294fff))
+- *(Extensions)* Remove outdated comments regarding nullable type comparison - ([f5783ac](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/f5783ac15a105051ebe1fae0b8c8d37b2500ee48))
+- *(Logger)* Centralize log message formatting with reusable constant - ([f4dff2a](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/f4dff2a9169dd7063aa65bbdc6843459e197c96f))
+- *(Logger)* Stop waiting log method - ([1d29dfd](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/1d29dfdf347b9f26c9bc8c9c70e66df9ba441e0d))
+- *(MethodUtils)* Extract `GetCallerName` and `GetMethodName` methods for improved reusability and clarity - ([e6393dd](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/e6393dd6bc806859a8f3f84642c81f641522921c))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(BepInExUtils)* Update Generator DLL - ([0bfec7c](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/0bfec7cb6191e17c4ad187069f15b4635e18736b))
+- *(BepInExUtils)* Update Generator DLL - ([e91fffa](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/e91fffabdc68228e3c862bbea4359029877c03e4))
+- *(BepInExUtils)* Update Generator DLL - ([0745c7a](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/0745c7ac151b24fb698923470a47185cc3cea080))
+
+### Action
+
+- Update `CHANGELOG.md` - ([62ef2f5](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/62ef2f5a878244bc72dc0cd3d9a6e0dbcdea3990))
+
+
 ## [0.9.2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.9.1..v0.9.2) - 2025-10-15
 
 ### 🚜 Refactor
