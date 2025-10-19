@@ -13,22 +13,12 @@ public static class CommandManager
 
     private static readonly List<CommandInfo> DefaultCommands =
     [
-        new()
+        new("help", "Show command infos", _ =>
         {
-            Name = "help",
-            Description = "Show command infos",
-            Command = _ =>
-            {
-                var cmdInfos = Infos.Values.Select(cmd => $"{cmd.Name} - {cmd.Description}");
-                Utils.Logger.Info($"Available commands:\n{string.Join("\n", cmdInfos)}");
-            }
-        },
-        new()
-        {
-            Name = "echo",
-            Description = "Echo args",
-            Command = args => Utils.Logger.Info(string.Join("\n", args))
-        }
+            var cmdInfos = Infos.Values.Select(cmd => $"{cmd.Name} - {cmd.Description}");
+            Utils.Logger.Info($"Available commands:\n{string.Join("\n", cmdInfos)}");
+        }),
+        new("echo", "Echo args", args => Utils.Logger.Info(string.Join("\n", args)))
     ];
 
     internal static void Init()
@@ -39,12 +29,8 @@ public static class CommandManager
 
     public static void AddCommand(CommandInfo commandInfo) => Infos.Add(commandInfo.Name, commandInfo);
 
-    public static void AddCommand(string commandName, string description, Command command) => AddCommand(new()
-    {
-        Name = commandName,
-        Description = description,
-        Command = command
-    });
+    public static void AddCommand(string commandName, string description, Command command) =>
+        AddCommand(new(commandName, description, command));
 
     public static bool TryExecuteCommand(string command, params string[] args)
     {

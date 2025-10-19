@@ -1,8 +1,8 @@
 namespace BepInExUtils.Commands;
 
-public struct CommandInfo
+public readonly record struct CommandInfo(string Name, string Description, CommandManager.Command Command)
 {
-    public string Name;
-    public string Description;
-    public CommandManager.Command Command;
+    public readonly CommandManager.Command Command = Command;
+    public readonly string Description = Description;
+    public readonly string Name = Name;
 }
