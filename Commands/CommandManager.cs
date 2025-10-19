@@ -30,7 +30,7 @@ public static class CommandManager
     public static void AddCommand(string commandName, string description, Command command) =>
         AddCommand(new(commandName, description, command));
 
-    public static async Task<bool> TryExecuteCommand(string command, params string[] args)
+    public static async Task<bool> ExecuteCommand(string command, params string[] args)
     {
         if (!Infos.TryGetValue(command, out var info)) return false;
         await info.Command(args);
