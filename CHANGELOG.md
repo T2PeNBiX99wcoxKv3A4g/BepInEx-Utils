@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.1](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v1.0.0..v1.0.1) - 2025-10-21
+
+### 🚜 Refactor
+
+- *(Utils)* Change class visibility from public to internal - ([3db76c2](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/3db76c27d4efc7c246e47ed0f8cc56c1239f2137))
+
+### Action
+
+- Update `CHANGELOG.md` - ([b3de7fa](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/commit/b3de7faa7d32828bd005764cd696b4ae4b257318))
+
+
 ## [1.0.0](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/compare/v0.9.2..v1.0.0) - 2025-10-19
 
 ### ⛰️  Features
