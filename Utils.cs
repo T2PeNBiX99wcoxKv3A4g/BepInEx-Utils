@@ -1,5 +1,5 @@
 namespace BepInExUtils;
 
-public partial class Utils
+internal partial class Utils
 {
 }
