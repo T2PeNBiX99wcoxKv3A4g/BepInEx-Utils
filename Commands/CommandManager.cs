@@ -3,36 +3,49 @@ using JetBrains.Annotations;
 namespace BepInExUtils.Commands;
 
 [PublicAPI]
-public static class CommandManager
+public sealed class CommandManager
 {
     public delegate Task Command(string[] args);
 
-    private static readonly Dictionary<string, CommandInfo> Infos = [];
+    public static readonly CommandManager Instance = new();
 
-    private static readonly List<CommandInfo> DefaultCommands =
-    [
-        new("help", "Show command infos", async _ =>
-        {
-            var cmdInfos = Infos.Values.Select(cmd => $"{cmd.Name} - {cmd.Description}");
-            await Utils.Logger.InfoAsync($"Available commands:\n{string.Join("\n", cmdInfos)}");
-        }),
-        new("echo", "Echo args", async args => { await Utils.Logger.InfoAsync(string.Join("\n", args)); })
-    ];
+    private readonly Dictionary<string, CommandInfo> _commands = [];
 
-    internal static void Init()
+    private CommandManager()
     {
-        DefaultCommands.ForEach(AddCommand);
+        AddDefaultCommands();
         Utils.Logger.Debug("CommandManager init");
     }
 
-    public static void AddCommand(CommandInfo commandInfo) => Infos.Add(commandInfo.Name, commandInfo);
-
-    public static void AddCommand(string commandName, string description, Command command) =>
-        AddCommand(new(commandName, description, command));
-
-    public static async Task<bool> ExecuteCommand(string command, params string[] args)
+    private void AddDefaultCommands()
     {
-        if (!Infos.TryGetValue(command, out var info)) return false;
+        AddCommand(new("help", "Show command infos", async _ =>
+        {
+            var cmdInfos = _commands.Values.Select(cmd => $"{cmd.Name} - {cmd.Description}");
+            await Utils.Logger.InfoAsync($"Available commands:\n{string.Join("\n", cmdInfos)}");
+        }));
+        AddCommand(new("echo", "Echo args", async args => { await Utils.Logger.InfoAsync(string.Join("\n", args)); }));
+    }
+
+    public void AddCommand(CommandInfo commandInfo)
+    {
+        if (_commands.ContainsKey(commandInfo.Name))
+        {
+            Utils.Logger.Error($"Command {commandInfo.Name} already exists");
+            return;
+        }
+
+        _commands.Add(commandInfo.Name, commandInfo);
+    }
+
+    public void AddCommand(string commandName, string description, Command command)
+    {
+        AddCommand(new(commandName, description, command));
+    }
+
+    public async Task<bool> ExecuteCommand(string command, params string[] args)
+    {
+        if (!_commands.TryGetValue(command, out var info)) return false;
         await info.Command(args);
         return true;
     }

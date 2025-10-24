@@ -1,5 +1,4 @@
 using BepInExUtils.Attributes;
-using BepInExUtils.Commands;
 
 namespace BepInExUtils;
 
@@ -10,6 +9,5 @@ public partial class Main
 
     public void Init()
     {
-        CommandManager.Init();
     }
 }
